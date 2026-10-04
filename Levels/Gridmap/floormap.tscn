@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cg74uoxay1gbp"]
+
+[ext_resource type="PackedScene" uid="uid://dr4ka500iryrf" path="res://Assets/Props/Dungeon/Floor/floor_tile_small.gltf" id="1_e3sex"]
+
+[node name="Floormap" type="Node3D" unique_id=698984514]
+
+[node name="floor_tile_small2" parent="." unique_id=538799597 instance=ExtResource("1_e3sex")]

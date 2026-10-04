@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://yxemyyegj0ae"]
+
+[ext_resource type="PackedScene" uid="uid://bc4dybspju42g" path="res://Assets/Props/Dungeon/Walls/wall_corner.gltf" id="1_8o6p6"]
+[ext_resource type="PackedScene" uid="uid://btpwn0j5h7f0j" path="res://Assets/Props/Dungeon/Walls/wall.gltf" id="2_pspqs"]
+
+[node name="WallMap" type="Node3D" unique_id=308335175]
+
+[node name="wall_corner2" parent="." unique_id=1642231495 instance=ExtResource("1_8o6p6")]
+
+[node name="wall" parent="." unique_id=133357721 instance=ExtResource("2_pspqs")]
