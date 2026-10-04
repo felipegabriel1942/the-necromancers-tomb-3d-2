@@ -3,7 +3,51 @@
 [ext_resource type="Script" uid="uid://bac3tymqr5y48" path="res://Entities/Agents/Player/player.gd" id="1_p6bf3"]
 [ext_resource type="PackedScene" uid="uid://b0bldiqhd835c" path="res://Assets/Models/Characters/Knight/Knight.glb" id="1_pndqj"]
 [ext_resource type="Script" uid="uid://chox82pd538hb" path="res://Entities/Agents/Player/States/IdleState.gd" id="3_p6bf3"]
+[ext_resource type="Animation" uid="uid://cwxeirx77pfym" path="res://Assets/Models/Animations/Death_A.res" id="3_smtuq"]
 [ext_resource type="Script" uid="uid://c21udiucv2vre" path="res://Entities/Agents/Player/States/RunState.gd" id="4_dejx3"]
+[ext_resource type="Animation" uid="uid://ctab2m41ouend" path="res://Assets/Models/Animations/Death_B.res" id="4_utb72"]
+[ext_resource type="Animation" uid="uid://diaathiv5oqp8" path="res://Assets/Models/Animations/Hit_A.res" id="5_64ha0"]
+[ext_resource type="Animation" uid="uid://ne016dh32kpm" path="res://Assets/Models/Animations/Idle_A.res" id="6_v5a4a"]
+[ext_resource type="Animation" uid="uid://deo0itv7dirdd" path="res://Assets/Models/Animations/Idle_B.res" id="7_mmdo8"]
+[ext_resource type="Animation" uid="uid://cj22nhl01kj0p" path="res://Assets/Models/Animations/Spawn_Ground.res" id="8_7mb4k"]
+[ext_resource type="Animation" uid="uid://dskl8o4iwwkuj" path="res://Assets/Models/Animations/Running_A.res" id="8_v5a4a"]
+[ext_resource type="Script" uid="uid://jkc66fb6bct" path="res://Entities/Agents/Player/player_animation_tree.gd" id="9_utb72"]
+[ext_resource type="Animation" uid="uid://chmrn8oobpgqj" path="res://Assets/Models/Animations/Walking_A.res" id="10_mmdo8"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jb7qm"]
+_data = {
+&"Death_A": ExtResource("3_smtuq"),
+&"Death_B": ExtResource("4_utb72"),
+&"Hit_A": ExtResource("5_64ha0"),
+&"Idle_A": ExtResource("6_v5a4a"),
+&"Idle_B": ExtResource("7_mmdo8"),
+&"Running_A": ExtResource("8_v5a4a"),
+&"Spawn_Ground": ExtResource("8_7mb4k"),
+&"Walking_A": ExtResource("10_mmdo8")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_utb72"]
+animation = &"Idle_A"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7mb4k"]
+animation = &"Running_A"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_64ha0"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_utb72")
+blend_point_0/pos = -1.0
+blend_point_0/name = &"Idle_A"
+blend_point_1/node = SubResource("AnimationNodeAnimation_7mb4k")
+blend_point_1/pos = 1.0
+blend_point_1/name = &"Running_A"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v5a4a"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_xrivr"]
+states/Start/position = Vector2(128, 100)
+states/WalkSpace/node = SubResource("AnimationNodeBlendSpace1D_64ha0")
+states/WalkSpace/position = Vector2(333, 100)
+transitions = ["Start", "WalkSpace", SubResource("AnimationNodeStateMachineTransition_v5a4a")]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
 
@@ -18,6 +62,46 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 fov = 65.0
 
 [node name="PlayerRoot" parent="." unique_id=2135776885 instance=ExtResource("1_pndqj")]
+
+[node name="Skeleton3D" parent="PlayerRoot/Rig_Medium" parent_id_path=PackedInt32Array(2135776885, 2134391697) index="0" unique_id=295986735]
+bones/1/position = Vector3(0, 0.4371587, 0)
+bones/1/rotation = Quaternion(0.095845774, -1.1866046e-07, 1.1425705e-08, 0.9953962)
+bones/2/rotation = Quaternion(7.5231634e-37, 7.105427e-15, 1.0587911e-22, 1)
+bones/3/rotation = Quaternion(0.04213311, 0.0021541486, 0.011082109, 0.99904823)
+bones/4/position = Vector3(0.21200736, 0.124591716, -0.04908126)
+bones/4/rotation = Quaternion(-0.59904945, 0.081652515, -0.5373604, 0.5879765)
+bones/5/rotation = Quaternion(-1.7756745e-08, -6.282385e-08, -0.42743266, 0.90404725)
+bones/6/rotation = Quaternion(1.5055068e-08, -7.3161175e-09, 0.0266581, 0.99964464)
+bones/6/scale = Vector3(1.0000001, 1, 1)
+bones/7/rotation = Quaternion(-0.126534, -0.3519782, -0.49310666, 0.7854592)
+bones/8/rotation = Quaternion(-0.054505434, 0.054505393, -0.5391622, 0.838667)
+bones/9/position = Vector3(-0.18637733, 0.11175979, -0.04215817)
+bones/9/rotation = Quaternion(-0.5838075, 0.34844056, 0.67395025, 0.28904858)
+bones/10/rotation = Quaternion(3.320162e-08, 6.1119046e-08, 0.56677157, 0.82387507)
+bones/11/rotation = Quaternion(2.2393214e-10, 6.785567e-09, -0.026658092, 0.99964464)
+bones/11/scale = Vector3(0.99999994, 0.99999994, 1)
+bones/12/rotation = Quaternion(0.008697546, 0.3960501, -0.17517336, 0.9013229)
+bones/13/rotation = Quaternion(-0.054505423, -0.054505408, 0.5391622, 0.838667)
+bones/14/rotation = Quaternion(-0.13049294, 0.002866565, -0.0006837016, 0.9914449)
+bones/15/position = Vector3(-0.17094506, 0.11358735, -0.099999994)
+bones/15/rotation = Quaternion(0.9538545, 2.2173069e-07, 3.3896512e-09, -0.3002692)
+bones/16/rotation = Quaternion(0.3915314, -6.35308e-08, 2.7190487e-07, 0.9201648)
+bones/17/rotation = Quaternion(-0.44524628, 2.9205347e-07, -1.0223306e-07, 0.89540815)
+bones/18/rotation = Quaternion(8.1684615e-09, 0.9203663, -0.39105743, 5.89039e-08)
+bones/19/position = Vector3(0.17094506, 0.11358723, 0.100000046)
+bones/19/rotation = Quaternion(0.9190819, -1.639743e-08, 1.2544838e-08, 0.39406648)
+bones/20/rotation = Quaternion(0.0019691067, 6.904272e-08, -1.3675262e-09, 0.99999815)
+bones/21/rotation = Quaternion(-0.49649605, 1.7175507e-08, -9.8757184e-08, 0.868039)
+bones/22/rotation = Quaternion(2.354348e-08, 0.918349, -0.3957716, 6.431701e-08)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerRoot" unique_id=754189747]
+libraries/ = SubResource("AnimationLibrary_jb7qm")
+
+[node name="AnimationTree" type="AnimationTree" parent="PlayerRoot" unique_id=859452898]
+tree_root = SubResource("AnimationNodeStateMachine_xrivr")
+anim_player = NodePath("../AnimationPlayer")
+parameters/WalkSpace/blend_position = -0.9879952
+script = ExtResource("9_utb72")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2105938216]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

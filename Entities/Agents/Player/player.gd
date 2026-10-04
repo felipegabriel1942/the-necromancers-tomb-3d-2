@@ -5,6 +5,7 @@ class_name Player
 @export var movement_speed := 8.0
 
 @onready var player_root: Node3D = $PlayerRoot
+@onready var animation_tree: AnimationTree = $PlayerRoot/AnimationTree
 
 @onready var state_machine: LimboHSM = $StateMachine
 @onready var idle: PlayerState = $StateMachine/Idle

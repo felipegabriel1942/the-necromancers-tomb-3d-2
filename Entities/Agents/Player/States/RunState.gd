@@ -1,6 +1,7 @@
 extends PlayerState
 
 func _enter() -> void:
+	agent.animation_tree.blend_target = 1.0
 	print("RunState")
 
 func _update(delta: float) -> void:
