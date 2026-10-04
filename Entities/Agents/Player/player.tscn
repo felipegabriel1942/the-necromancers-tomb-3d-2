@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://hpm80wwpunhw"]
 
+[ext_resource type="Script" uid="uid://bac3tymqr5y48" path="res://Entities/Agents/Player/player.gd" id="1_p6bf3"]
 [ext_resource type="PackedScene" uid="uid://b0bldiqhd835c" path="res://Assets/Models/Characters/Knight/Knight.glb" id="1_pndqj"]
+[ext_resource type="Script" uid="uid://chox82pd538hb" path="res://Entities/Agents/Player/States/IdleState.gd" id="3_p6bf3"]
+[ext_resource type="Script" uid="uid://c21udiucv2vre" path="res://Entities/Agents/Player/States/RunState.gd" id="4_dejx3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1502439064]
+script = ExtResource("1_p6bf3")
 
 [node name="CameraRoot" type="Node3D" parent="." unique_id=136551812]
 transform = Transform3D(-0.70710677, -0.5416752, 0.45451948, 0, 0.64278764, 0.76604444, -0.70710677, 0.5416752, -0.45451948, 0, 0, 0)
@@ -13,8 +17,18 @@ transform = Transform3D(-0.70710677, -0.5416752, 0.45451948, 0, 0.64278764, 0.76
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 fov = 65.0
 
-[node name="Knight" parent="." unique_id=2135776885 instance=ExtResource("1_pndqj")]
+[node name="PlayerRoot" parent="." unique_id=2135776885 instance=ExtResource("1_pndqj")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2105938216]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_xrivr")
+
+[node name="StateMachine" type="LimboHSM" parent="." unique_id=198036873]
+
+[node name="Idle" type="LimboState" parent="StateMachine" unique_id=1022254752]
+script = ExtResource("3_p6bf3")
+
+[node name="Run" type="LimboState" parent="StateMachine" unique_id=752734399]
+script = ExtResource("4_dejx3")
+
+[editable path="PlayerRoot"]
