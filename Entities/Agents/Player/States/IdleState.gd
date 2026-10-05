@@ -7,6 +7,5 @@ func _enter() -> void:
 func _update(delta: float) -> void:
 	var input = agent.get_movement_direction() as Vector3
 	
-	
 	if not input.is_zero_approx():
 		dispatch("run")

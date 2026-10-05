@@ -2,17 +2,28 @@
 
 [ext_resource type="Script" uid="uid://bac3tymqr5y48" path="res://Entities/Agents/Player/player.gd" id="1_p6bf3"]
 [ext_resource type="PackedScene" uid="uid://b0bldiqhd835c" path="res://Assets/Models/Characters/Knight/Knight.glb" id="1_pndqj"]
+[ext_resource type="PackedScene" uid="uid://bphn47pjn5jfo" path="res://Assets/Models/Characters/Knight/sword_1handed.gltf" id="3_7mb4k"]
 [ext_resource type="Script" uid="uid://chox82pd538hb" path="res://Entities/Agents/Player/States/IdleState.gd" id="3_p6bf3"]
-[ext_resource type="Animation" uid="uid://cwxeirx77pfym" path="res://Assets/Models/Animations/Death_A.res" id="3_smtuq"]
+[ext_resource type="Animation" uid="uid://b6l1kkvoidr6c" path="res://Assets/Models/Animations/Death_A.res" id="3_smtuq"]
 [ext_resource type="Script" uid="uid://c21udiucv2vre" path="res://Entities/Agents/Player/States/RunState.gd" id="4_dejx3"]
-[ext_resource type="Animation" uid="uid://ctab2m41ouend" path="res://Assets/Models/Animations/Death_B.res" id="4_utb72"]
-[ext_resource type="Animation" uid="uid://diaathiv5oqp8" path="res://Assets/Models/Animations/Hit_A.res" id="5_64ha0"]
-[ext_resource type="Animation" uid="uid://ne016dh32kpm" path="res://Assets/Models/Animations/Idle_A.res" id="6_v5a4a"]
-[ext_resource type="Animation" uid="uid://deo0itv7dirdd" path="res://Assets/Models/Animations/Idle_B.res" id="7_mmdo8"]
-[ext_resource type="Animation" uid="uid://cj22nhl01kj0p" path="res://Assets/Models/Animations/Spawn_Ground.res" id="8_7mb4k"]
+[ext_resource type="Animation" uid="uid://cpyudixhkwkbb" path="res://Assets/Models/Animations/Death_B.res" id="4_utb72"]
+[ext_resource type="Animation" uid="uid://civ0wgv83ashg" path="res://Assets/Models/Animations/Hit_A.res" id="5_64ha0"]
+[ext_resource type="Animation" uid="uid://csfguptv60xk" path="res://Assets/Models/Animations/Idle_A.res" id="6_v5a4a"]
+[ext_resource type="Animation" uid="uid://dlv53tgfqt0sm" path="res://Assets/Models/Animations/Idle_B.res" id="7_mmdo8"]
+[ext_resource type="Animation" uid="uid://drpjijb0yfiqx" path="res://Assets/Models/Animations/Spawn_Ground.res" id="8_7mb4k"]
 [ext_resource type="Animation" uid="uid://dskl8o4iwwkuj" path="res://Assets/Models/Animations/Running_A.res" id="8_v5a4a"]
+[ext_resource type="Animation" uid="uid://c7en7uaptq2ms" path="res://Assets/Models/Animations/Melee_1H_Attack_Chop.res" id="9_jyjtq"]
 [ext_resource type="Script" uid="uid://jkc66fb6bct" path="res://Entities/Agents/Player/player_animation_tree.gd" id="9_utb72"]
+[ext_resource type="Animation" uid="uid://dla21hj3gyvvc" path="res://Assets/Models/Animations/T-Pose.res" id="10_7mb4k"]
 [ext_resource type="Animation" uid="uid://chmrn8oobpgqj" path="res://Assets/Models/Animations/Walking_A.res" id="10_mmdo8"]
+[ext_resource type="Animation" uid="uid://cue1xatql2hnc" path="res://Assets/Models/Animations/Melee_1H_Attack_Jump_Chop.res" id="10_oxerk"]
+[ext_resource type="Animation" uid="uid://bp8sr40vjjedw" path="res://Assets/Models/Animations/Melee_1H_Attack_Slice_Diagonal.res" id="11_h8p51"]
+[ext_resource type="Animation" uid="uid://b54hen0oxrmk3" path="res://Assets/Models/Animations/Melee_1H_Attack_Slice_Horizontal.res" id="12_4u7pf"]
+[ext_resource type="Animation" uid="uid://dt7gyay4lafrb" path="res://Assets/Models/Animations/Melee_1H_Attack_Stab.res" id="13_1u5ar"]
+[ext_resource type="Script" uid="uid://d81obvhwgij7" path="res://Entities/Agents/Player/States/AttackState.gd" id="21_oxerk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
+size = Vector3(1, 0.5, 0.5)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jb7qm"]
 _data = {
@@ -21,10 +32,55 @@ _data = {
 &"Hit_A": ExtResource("5_64ha0"),
 &"Idle_A": ExtResource("6_v5a4a"),
 &"Idle_B": ExtResource("7_mmdo8"),
+&"Melee_1H_Attack_Chop": ExtResource("9_jyjtq"),
+&"Melee_1H_Attack_Jump_Chop": ExtResource("10_oxerk"),
+&"Melee_1H_Attack_Slice_Diagonal": ExtResource("11_h8p51"),
+&"Melee_1H_Attack_Slice_Horizontal": ExtResource("12_4u7pf"),
+&"Melee_1H_Attack_Stab": ExtResource("13_1u5ar"),
 &"Running_A": ExtResource("8_v5a4a"),
 &"Spawn_Ground": ExtResource("8_7mb4k"),
+&"T-Pose": ExtResource("10_7mb4k"),
 &"Walking_A": ExtResource("10_mmdo8")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jyjtq"]
+animation = &"Melee_1H_Attack_Slice_Diagonal"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_oxerk"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_h8p51"]
+graph_offset = Vector2(-393.10156, -18.008057)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_jyjtq")
+nodes/Animation/position = Vector2(-360, 120)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_oxerk")
+nodes/TimeScale/position = Vector2(40, 120)
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oxerk"]
+animation = &"Melee_1H_Attack_Slice_Horizontal"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_h8p51"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_4u7pf"]
+nodes/output/position = Vector2(640, 200)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_oxerk")
+nodes/Animation/position = Vector2(61.199398, 175.54564)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_h8p51")
+nodes/TimeScale/position = Vector2(460, 180)
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4u7pf"]
+animation = &"Melee_1H_Attack_Stab"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_1u5ar"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_38q8j"]
+nodes/output/position = Vector2(600, 200)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_4u7pf")
+nodes/Animation/position = Vector2(96.63063, 183.59819)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_1u5ar")
+nodes/TimeScale/position = Vector2(400, 180)
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_utb72"]
 animation = &"Idle_A"
@@ -43,11 +99,42 @@ blend_point_1/name = &"Running_A"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v5a4a"]
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_blt7w"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ctiie"]
+xfade_time = 0.2
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jyjtq"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oxerk"]
+xfade_time = 0.2
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h8p51"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4u7pf"]
+xfade_time = 0.2
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_xrivr"]
+states/Melee_1H_Attack_Slice_Diagonal/node = SubResource("AnimationNodeBlendTree_h8p51")
+states/Melee_1H_Attack_Slice_Diagonal/position = Vector2(685, 100)
+states/Melee_1H_Attack_Slice_Horizontal/node = SubResource("AnimationNodeBlendTree_4u7pf")
+states/Melee_1H_Attack_Slice_Horizontal/position = Vector2(366.01843, 257.19244)
+states/Melee_1H_Attack_Stab/node = SubResource("AnimationNodeBlendTree_38q8j")
+states/Melee_1H_Attack_Stab/position = Vector2(336.01843, -46)
 states/Start/position = Vector2(128, 100)
 states/WalkSpace/node = SubResource("AnimationNodeBlendSpace1D_64ha0")
-states/WalkSpace/position = Vector2(333, 100)
-transitions = ["Start", "WalkSpace", SubResource("AnimationNodeStateMachineTransition_v5a4a")]
+states/WalkSpace/position = Vector2(326, 100)
+transitions = ["Start", "WalkSpace", SubResource("AnimationNodeStateMachineTransition_v5a4a"), "WalkSpace", "Melee_1H_Attack_Slice_Diagonal", SubResource("AnimationNodeStateMachineTransition_blt7w"), "Melee_1H_Attack_Slice_Diagonal", "WalkSpace", SubResource("AnimationNodeStateMachineTransition_ctiie"), "WalkSpace", "Melee_1H_Attack_Stab", SubResource("AnimationNodeStateMachineTransition_jyjtq"), "Melee_1H_Attack_Stab", "WalkSpace", SubResource("AnimationNodeStateMachineTransition_oxerk"), "WalkSpace", "Melee_1H_Attack_Slice_Horizontal", SubResource("AnimationNodeStateMachineTransition_h8p51"), "Melee_1H_Attack_Slice_Horizontal", "WalkSpace", SubResource("AnimationNodeStateMachineTransition_4u7pf")]
+graph_offset = Vector2(131.01846, 151.00833)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
 
@@ -62,37 +149,73 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 fov = 65.0
 
 [node name="PlayerRoot" parent="." unique_id=2135776885 instance=ExtResource("1_pndqj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="PlayerRoot/Rig_Medium" parent_id_path=PackedInt32Array(2135776885, 2134391697) index="0" unique_id=295986735]
-bones/1/position = Vector3(0, 0.4371587, 0)
-bones/1/rotation = Quaternion(0.095845774, -1.1866046e-07, 1.1425705e-08, 0.9953962)
-bones/2/rotation = Quaternion(7.5231634e-37, 7.105427e-15, 1.0587911e-22, 1)
-bones/3/rotation = Quaternion(0.04213311, 0.0021541486, 0.011082109, 0.99904823)
-bones/4/position = Vector3(0.21200736, 0.124591716, -0.04908126)
-bones/4/rotation = Quaternion(-0.59904945, 0.081652515, -0.5373604, 0.5879765)
-bones/5/rotation = Quaternion(-1.7756745e-08, -6.282385e-08, -0.42743266, 0.90404725)
+bones/1/position = Vector3(1.1692056e-20, 0.39228886, 2.7876033e-27)
+bones/1/rotation = Quaternion(0.00059824414, 0.042898852, -2.5685085e-05, 0.9990793)
+bones/1/scale = Vector3(0.99999994, 1, 0.99999994)
+bones/2/rotation = Quaternion(4.3980813e-06, 7.1054274e-15, -3.1250108e-20, 1)
+bones/2/scale = Vector3(1.0000001, 1, 1.0000001)
+bones/3/rotation = Quaternion(0.0048491247, 1.6776632e-05, 0.0004966721, 0.9999882)
+bones/3/scale = Vector3(1, 0.9999999, 1)
+bones/4/position = Vector3(0.21185656, 0.13399938, -0.00025378613)
+bones/4/rotation = Quaternion(-0.53416914, -0.117836215, -0.7712311, 0.3255464)
+bones/4/scale = Vector3(0.9999993, 0.99999905, 0.9999998)
+bones/5/rotation = Quaternion(1.2615269e-08, -6.4176646e-08, -0.3596242, 0.93309724)
+bones/5/scale = Vector3(1.0000004, 0.9999998, 1)
 bones/6/rotation = Quaternion(1.5055068e-08, -7.3161175e-09, 0.0266581, 0.99964464)
 bones/6/scale = Vector3(1.0000001, 1, 1)
-bones/7/rotation = Quaternion(-0.126534, -0.3519782, -0.49310666, 0.7854592)
-bones/8/rotation = Quaternion(-0.054505434, 0.054505393, -0.5391622, 0.838667)
-bones/9/position = Vector3(-0.18637733, 0.11175979, -0.04215817)
-bones/9/rotation = Quaternion(-0.5838075, 0.34844056, 0.67395025, 0.28904858)
-bones/10/rotation = Quaternion(3.320162e-08, 6.1119046e-08, 0.56677157, 0.82387507)
+bones/7/rotation = Quaternion(-0.22023751, -0.34621647, 0.1845542, 0.89306736)
+bones/7/scale = Vector3(0.99999976, 1.0000001, 1.0000004)
+bones/8/position = Vector3(5.138497e-10, 0.096125126, -0.057500005)
+bones/8/rotation = Quaternion(-0.00033000702, 0.00033001014, -0.7061995, 0.7080127)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/position = Vector3(-0.21200433, 0.13407348, -0.0002937021)
+bones/9/rotation = Quaternion(-0.5599541, 0.046189815, 0.73626524, 0.37713572)
+bones/9/scale = Vector3(0.9999992, 0.9999988, 0.9999998)
+bones/10/rotation = Quaternion(-9.232068e-09, 4.7023494e-08, 0.3771559, 0.9261499)
+bones/10/scale = Vector3(1.0000004, 0.99999976, 1.0000001)
 bones/11/rotation = Quaternion(2.2393214e-10, 6.785567e-09, -0.026658092, 0.99964464)
 bones/11/scale = Vector3(0.99999994, 0.99999994, 1)
-bones/12/rotation = Quaternion(0.008697546, 0.3960501, -0.17517336, 0.9013229)
-bones/13/rotation = Quaternion(-0.054505423, -0.054505408, 0.5391622, 0.838667)
-bones/14/rotation = Quaternion(-0.13049294, 0.002866565, -0.0006837016, 0.9914449)
-bones/15/position = Vector3(-0.17094506, 0.11358735, -0.099999994)
-bones/15/rotation = Quaternion(0.9538545, 2.2173069e-07, 3.3896512e-09, -0.3002692)
-bones/16/rotation = Quaternion(0.3915314, -6.35308e-08, 2.7190487e-07, 0.9201648)
-bones/17/rotation = Quaternion(-0.44524628, 2.9205347e-07, -1.0223306e-07, 0.89540815)
-bones/18/rotation = Quaternion(8.1684615e-09, 0.9203663, -0.39105743, 5.89039e-08)
-bones/19/position = Vector3(0.17094506, 0.11358723, 0.100000046)
-bones/19/rotation = Quaternion(0.9190819, -1.639743e-08, 1.2544838e-08, 0.39406648)
-bones/20/rotation = Quaternion(0.0019691067, 6.904272e-08, -1.3675262e-09, 0.99999815)
-bones/21/rotation = Quaternion(-0.49649605, 1.7175507e-08, -9.8757184e-08, 0.868039)
-bones/22/rotation = Quaternion(2.354348e-08, 0.918349, -0.3957716, 6.431701e-08)
+bones/12/rotation = Quaternion(-0.21021096, 0.38518757, -0.13660234, 0.88813394)
+bones/12/scale = Vector3(0.9999995, 0.99999994, 1.0000005)
+bones/13/position = Vector3(-1.5325583e-08, 0.096125185, -0.057500005)
+bones/13/rotation = Quaternion(-0.00033000694, -0.00033001023, 0.7061995, 0.7080127)
+bones/13/scale = Vector3(1, 1.0000001, 1.0000001)
+bones/14/rotation = Quaternion(-0.003719007, -0.031148206, -0.00020098027, 0.9995079)
+bones/14/scale = Vector3(0.99999994, 1, 1)
+bones/15/position = Vector3(-0.17094508, 0.11358732, 0.00057663524)
+bones/15/rotation = Quaternion(0.9972069, -0.02935447, 0.03127122, 0.061146654)
+bones/15/scale = Vector3(0.9999999, 0.99999976, 1.0000008)
+bones/16/rotation = Quaternion(0.2726926, -6.385497e-08, 1.9183331e-07, 0.9621012)
+bones/16/scale = Vector3(0.99999994, 0.99999976, 0.99999994)
+bones/17/rotation = Quaternion(-0.5587907, 0.11383539, -0.008530732, 0.8214145)
+bones/17/scale = Vector3(0.99999976, 1.0000006, 0.9999992)
+bones/18/rotation = Quaternion(-8.881235e-05, 0.92022145, -0.39139834, 2.016982e-05)
+bones/18/scale = Vector3(1.0000002, 0.9999979, 1.0000024)
+bones/19/position = Vector3(0.17094508, 0.1135872, -0.00057660346)
+bones/19/rotation = Quaternion(0.992586, 0.057928607, 0.06990378, 0.080813825)
+bones/19/scale = Vector3(0.9999999, 0.9999997, 1.0000008)
+bones/20/rotation = Quaternion(0.26389194, 6.509542e-08, -1.7457711e-07, 0.9645523)
+bones/20/scale = Vector3(1.0000004, 0.99999994, 1.0000001)
+bones/21/rotation = Quaternion(-0.5297818, -0.11369448, 0.0415507, 0.83945125)
+bones/21/scale = Vector3(1.0000004, 1.0000007, 0.9999993)
+bones/22/rotation = Quaternion(1.5271835e-05, 0.9202601, -0.39130718, -3.3995059e-06)
+bones/22/scale = Vector3(1.0000001, 0.9999975, 1.0000027)
+
+[node name="WeaponSlot" type="BoneAttachment3D" parent="PlayerRoot/Rig_Medium/Skeleton3D" index="9" unique_id=862004456]
+transform = Transform3D(0.26337376, -0.0063070655, -0.9646734, -0.0063381493, -0.9999672, 0.004808545, -0.9646722, 0.0048474073, -0.26340526, -0.48100087, 0.6326991, 0.06497304)
+bone_name = "hand.r"
+bone_idx = 12
+
+[node name="sword_1handed2" parent="PlayerRoot/Rig_Medium/Skeleton3D/WeaponSlot" unique_id=231260592 instance=ExtResource("3_7mb4k")]
+transform = Transform3D(-4.3711374e-08, -0.9999998, 2.842171e-14, 0.9999998, -4.3711353e-08, 1.3502086e-14, 1.3440404e-14, 2.842171e-14, 1, -0.011421942, 0.11122805, 0)
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="PlayerRoot/Rig_Medium/Skeleton3D/WeaponSlot" unique_id=581572852]
+shape = SubResource("BoxShape3D_xrivr")
+target_position = Vector3(-1, 0.1, 0)
+max_results = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerRoot" unique_id=754189747]
 libraries/ = SubResource("AnimationLibrary_jb7qm")
@@ -100,6 +223,9 @@ libraries/ = SubResource("AnimationLibrary_jb7qm")
 [node name="AnimationTree" type="AnimationTree" parent="PlayerRoot" unique_id=859452898]
 tree_root = SubResource("AnimationNodeStateMachine_xrivr")
 anim_player = NodePath("../AnimationPlayer")
+parameters/Melee_1H_Attack_Slice_Diagonal/TimeScale/scale = 1.5
+parameters/Melee_1H_Attack_Slice_Horizontal/TimeScale/scale = 1.0
+parameters/Melee_1H_Attack_Stab/TimeScale/scale = 1.0
 parameters/WalkSpace/blend_position = -0.9879952
 script = ExtResource("9_utb72")
 
@@ -114,5 +240,9 @@ script = ExtResource("3_p6bf3")
 
 [node name="Run" type="LimboState" parent="StateMachine" unique_id=752734399]
 script = ExtResource("4_dejx3")
+
+[node name="Attack_01" type="LimboState" parent="StateMachine" unique_id=1230720195]
+script = ExtResource("21_oxerk")
+attack_animation_name = "Melee_1H_Attack_Slice_Diagonal"
 
 [editable path="PlayerRoot"]

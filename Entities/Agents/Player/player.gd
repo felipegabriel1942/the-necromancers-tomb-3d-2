@@ -10,10 +10,15 @@ class_name Player
 @onready var state_machine: LimboHSM = $StateMachine
 @onready var idle: PlayerState = $StateMachine/Idle
 @onready var run: PlayerState = $StateMachine/Run
+@onready var attack_01: PlayerState = $StateMachine/Attack_01
 
 func _ready() -> void:
 	state_machine.add_transition(idle, run, "run")
 	state_machine.add_transition(run, idle, "idle")
+	state_machine.add_transition(idle, attack_01, "attack_01")
+	state_machine.add_transition(run, attack_01, "attack_01")
+	state_machine.add_transition(attack_01, idle, attack_01.EVENT_FINISHED)
+	#state_machine.add_transition(attack_01, run, attack_01.EVENT_FINISHED)
 	
 	state_machine.initial_state = idle
 	state_machine.initialize(self)
