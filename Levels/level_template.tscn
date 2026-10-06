@@ -18,6 +18,10 @@ glow_enabled = true
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_xrivr"]
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_13qdw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
+
 [node name="LevelTemplate" type="Node3D" unique_id=2127177574]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1987610555]
@@ -46,3 +50,13 @@ data = {
 
 [node name="Player" parent="." unique_id=1502439064 instance=ExtResource("3_nsw7g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2611647, 0.29999995, 8.272126)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=571276109]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+collision_layer = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1544888140]
+mesh = SubResource("CapsuleMesh_13qdw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1516024801]
+shape = SubResource("CapsuleShape3D_xrivr")

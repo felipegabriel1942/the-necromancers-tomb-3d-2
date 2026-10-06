@@ -11,6 +11,7 @@ class_name Player
 @onready var idle: PlayerState = $StateMachine/Idle
 @onready var run: PlayerState = $StateMachine/Run
 @onready var attack_01: PlayerState = $StateMachine/Attack_01
+@onready var sword: Sword = $PlayerRoot/Rig_Medium/Skeleton3D/WeaponSlot/WeaponRoot/Sword
 
 func _ready() -> void:
 	state_machine.add_transition(idle, run, "run")

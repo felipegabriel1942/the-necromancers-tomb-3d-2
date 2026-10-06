@@ -24,6 +24,7 @@ window/stretch/aspect="expand"
 
 folder_colors={
 "res://Assets/": "red",
+"res://Components/": "purple",
 "res://Entities/": "green",
 "res://Levels/": "orange"
 }
