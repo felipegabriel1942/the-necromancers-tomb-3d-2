@@ -3,6 +3,8 @@
 [ext_resource type="MeshLibrary" uid="uid://cg6t3a407hnqr" path="res://Levels/Gridmap/floormap.res" id="1_gbce7"]
 [ext_resource type="MeshLibrary" uid="uid://d2ci051leggdh" path="res://Levels/Gridmap/wallmap.res" id="2_s7a6p"]
 [ext_resource type="PackedScene" uid="uid://hpm80wwpunhw" path="res://Entities/Agents/Player/player.tscn" id="3_nsw7g"]
+[ext_resource type="Script" uid="uid://bvn5eqmr62pja" path="res://Components/HealthComponent.gd" id="4_sjjkl"]
+[ext_resource type="AudioStream" uid="uid://dfsgqj5687246" path="res://Assets/Audio/hit.ogg" id="5_rbi8j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nsw7g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -60,3 +62,11 @@ mesh = SubResource("CapsuleMesh_13qdw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1516024801]
 shape = SubResource("CapsuleShape3D_xrivr")
+
+[node name="HealthComponent" type="Node" parent="StaticBody3D" unique_id=827368382 node_paths=PackedStringArray("hit_audio")]
+script = ExtResource("4_sjjkl")
+hit_audio = NodePath("../AudioStreamPlayer3D")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="StaticBody3D" unique_id=1620374561]
+stream = ExtResource("5_rbi8j")
+bus = &"SFX"

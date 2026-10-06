@@ -13,9 +13,12 @@ func deal_damage(damage: float, knockback: Vector3) -> void:
 		
 		for index in attack_shapecast.get_collision_count():
 			var collider = attack_shapecast.get_collider(index)
-			attack_shapecast.add_exception(collider)
-			temporary_exceptions.append(collider)
-			print(collider)
+			
+			if collider.has_node("HealthComponent"):
+				var health_component = collider.get_node("HealthComponent") as HealthComponent
+				health_component.take_damage(10)
+				attack_shapecast.add_exception(collider)
+				temporary_exceptions.append(collider)
 
 func reset_exceptions() -> void:
 	for exception in temporary_exceptions:

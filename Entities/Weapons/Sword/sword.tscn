@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cs2jn0nhw40sl" path="res://Assets/Models/Characters/Knight/knight_texture.png" id="1_ej2ef"]
 [ext_resource type="Script" uid="uid://dqrt23gcbp7gt" path="res://Entities/Weapons/Sword/sword.gd" id="1_s1r8x"]
 [ext_resource type="Script" uid="uid://dldw5cp071omj" path="res://Components/AttackComponent.gd" id="3_e1xto"]
+[ext_resource type="AudioStream" uid="uid://cw2ltq62s1v1w" path="res://Assets/Audio/weapon-swing.ogg" id="4_7f17r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmlwf"]
 resource_name = "knight"
@@ -62,3 +63,7 @@ target_position = Vector3(0, 1, 0)
 [node name="AttackComponent" type="Node" parent="." unique_id=1002483024 node_paths=PackedStringArray("attack_shapecast")]
 script = ExtResource("3_e1xto")
 attack_shapecast = NodePath("../ShapeCast3D")
+
+[node name="AttackAudio" type="AudioStreamPlayer3D" parent="." unique_id=919587601]
+stream = ExtResource("4_7f17r")
+bus = &"SFX"
