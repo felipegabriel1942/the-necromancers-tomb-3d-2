@@ -1,0 +1,23 @@
+extends Node3D
+
+@export var health_component: HealthComponent
+
+@onready var health_progress_bar: ProgressBar = $SubViewport/HealthProgressBar
+@onready var front_progress_bar: ProgressBar = $SubViewport/ProgressBar
+@onready var sprite_3d: Sprite3D = $Sprite3D
+
+func _ready() -> void:
+	health_component.health_changed.connect(update_health_value)
+	health_component.defeat.connect(defeat)
+	front_progress_bar.value = 100.0
+
+func update_health_value(value_in: float) -> void:
+	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
+	var target_health_percentage := (value_in / health_component.max_health) * 100.0
+	tween.tween_property(health_progress_bar, "value", target_health_percentage, 0.5).from(front_progress_bar.value)
+	front_progress_bar.value = target_health_percentage
+
+func defeat() -> void:
+	var tween = create_tween()
+	tween.tween_property(sprite_3d, "transparency", 1.0, 0.2).from(0.0)
+	tween.tween_callback(queue_free)

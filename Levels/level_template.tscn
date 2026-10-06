@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://hpm80wwpunhw" path="res://Entities/Agents/Player/player.tscn" id="3_nsw7g"]
 [ext_resource type="Script" uid="uid://bvn5eqmr62pja" path="res://Components/HealthComponent.gd" id="4_sjjkl"]
 [ext_resource type="AudioStream" uid="uid://dfsgqj5687246" path="res://Assets/Audio/hit.ogg" id="5_rbi8j"]
+[ext_resource type="PackedScene" uid="uid://cvqtlx7uffhfb" path="res://Components/health_bar.tscn" id="6_rshia"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nsw7g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -53,20 +54,26 @@ data = {
 [node name="Player" parent="." unique_id=1502439064 instance=ExtResource("3_nsw7g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2611647, 0.29999995, 8.272126)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=571276109]
+[node name="Enemy" type="StaticBody3D" parent="." unique_id=571276109]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 collision_layer = 2
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1544888140]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy" unique_id=1544888140]
 mesh = SubResource("CapsuleMesh_13qdw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1516024801]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy" unique_id=1516024801]
 shape = SubResource("CapsuleShape3D_xrivr")
 
-[node name="HealthComponent" type="Node" parent="StaticBody3D" unique_id=827368382 node_paths=PackedStringArray("hit_audio")]
+[node name="HealthComponent" type="Node" parent="Enemy" unique_id=827368382 node_paths=PackedStringArray("hit_audio")]
 script = ExtResource("4_sjjkl")
 hit_audio = NodePath("../AudioStreamPlayer3D")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="StaticBody3D" unique_id=1620374561]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Enemy" unique_id=1620374561]
 stream = ExtResource("5_rbi8j")
 bus = &"SFX"
+
+[node name="HealthBar" parent="Enemy" unique_id=202608203 node_paths=PackedStringArray("health_component") instance=ExtResource("6_rshia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4179542, 0)
+health_component = NodePath("../HealthComponent")
+
+[connection signal="defeat" from="Enemy/HealthComponent" to="Enemy" method="queue_free"]

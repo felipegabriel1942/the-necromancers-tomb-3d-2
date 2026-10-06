@@ -9,7 +9,7 @@ func _enter() -> void:
 	agent.animation_tree.animation_finished.connect(finish_attack, CONNECT_ONE_SHOT)
 
 func _update(delta: float) -> void:
-	agent.sword.attack_component.deal_damage(1, Vector3.FORWARD)
+	agent.sword.attack_component.deal_damage(agent.attack, Vector3.FORWARD)
 
 func finish_attack(_animation_name: String) -> void:
 	dispatch(EVENT_FINISHED)

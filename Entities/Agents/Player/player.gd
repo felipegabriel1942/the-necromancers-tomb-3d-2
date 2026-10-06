@@ -3,6 +3,7 @@ class_name Player
 
 @export var decay := 12.0
 @export var movement_speed := 8.0
+@export var attack := 20
 
 @onready var player_root: Node3D = $PlayerRoot
 @onready var animation_tree: AnimationTree = $PlayerRoot/AnimationTree

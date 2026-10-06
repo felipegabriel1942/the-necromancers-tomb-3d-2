@@ -1,6 +1,7 @@
 extends Node
 class_name AttackComponent
 
+@export var base_damage: int = 10
 @export var attack_shapecast: ShapeCast3D
 
 var temporary_exceptions := []
@@ -16,7 +17,7 @@ func deal_damage(damage: float, knockback: Vector3) -> void:
 			
 			if collider.has_node("HealthComponent"):
 				var health_component = collider.get_node("HealthComponent") as HealthComponent
-				health_component.take_damage(10)
+				health_component.take_damage(damage)
 				attack_shapecast.add_exception(collider)
 				temporary_exceptions.append(collider)
 
