@@ -1,0 +1,20 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://ci8wqg14gjrbi"]
+
+[ext_resource type="Script" uid="uid://bgrfulyr2wogo" path="res://ai/tasks/get_first_in_group.gd" id="1_m05vl"]
+[ext_resource type="Script" uid="uid://c35ldege1sqbv" path="res://ai/tasks/face_target.gd" id="2_qxjai"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_5l68n"]
+
+[sub_resource type="BTAction" id="BTAction_qxjai"]
+script = ExtResource("1_m05vl")
+group = &"player"
+
+[sub_resource type="BTAction" id="BTAction_kucn1"]
+script = ExtResource("2_qxjai")
+
+[sub_resource type="BTSequence" id="BTSequence_qxjai"]
+children = [SubResource("BTAction_qxjai"), SubResource("BTAction_kucn1")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_5l68n")
+root_task = SubResource("BTSequence_qxjai")
