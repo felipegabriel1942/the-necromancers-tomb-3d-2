@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cntownttfo35a"]
 
 [ext_resource type="Script" uid="uid://bvn5eqmr62pja" path="res://Components/HealthComponent.gd" id="1_326st"]
+[ext_resource type="Script" uid="uid://dwlbkx3mvgabi" path="res://Entities/Agents/Enemies/enemy.gd" id="1_cx3wy"]
 [ext_resource type="AudioStream" uid="uid://dfsgqj5687246" path="res://Assets/Audio/hit.ogg" id="2_cx3wy"]
 [ext_resource type="PackedScene" uid="uid://cvqtlx7uffhfb" path="res://Components/health_bar.tscn" id="3_lq547"]
 
@@ -8,6 +9,7 @@
 
 [node name="Enemy" type="CharacterBody3D" unique_id=649638333]
 collision_layer = 2
+script = ExtResource("1_cx3wy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1127346035]
 shape = SubResource("CapsuleShape3D_xrivr")
@@ -24,4 +26,4 @@ bus = &"SFX"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4179542, 0)
 health_component = NodePath("../HealthComponent")
 
-[connection signal="defeat" from="HealthComponent" to="." method="queue_free"]
+[connection signal="defeat" from="HealthComponent" to="." method="on_defeat"]
