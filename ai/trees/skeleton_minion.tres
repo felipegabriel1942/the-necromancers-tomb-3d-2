@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bgrfulyr2wogo" path="res://ai/tasks/get_first_in_group.gd" id="1_m05vl"]
 [ext_resource type="Script" uid="uid://c35ldege1sqbv" path="res://ai/tasks/face_target.gd" id="2_qxjai"]
 [ext_resource type="Script" uid="uid://b73eb68s6inv3" path="res://ai/tasks/pursue.gd" id="3_kucn1"]
+[ext_resource type="Script" uid="uid://bfida25m20b8a" path="res://ai/tasks/attack_target.gd" id="4_oaw38"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_5l68n"]
 
@@ -16,8 +17,12 @@ script = ExtResource("2_qxjai")
 [sub_resource type="BTAction" id="BTAction_oaw38"]
 script = ExtResource("3_kucn1")
 
+[sub_resource type="BTAction" id="BTAction_iask1"]
+script = ExtResource("4_oaw38")
+attack_interval = null
+
 [sub_resource type="BTSequence" id="BTSequence_qxjai"]
-children = [SubResource("BTAction_qxjai"), SubResource("BTAction_kucn1"), SubResource("BTAction_oaw38")]
+children = [SubResource("BTAction_qxjai"), SubResource("BTAction_kucn1"), SubResource("BTAction_oaw38"), SubResource("BTAction_iask1")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_5l68n")

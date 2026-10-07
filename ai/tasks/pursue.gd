@@ -16,15 +16,14 @@ func _tick(delta: float) -> Status:
 	if not is_instance_valid(target):
 		return FAILURE
 	
-	agent.navigation_agent_3d.target_position = target.global_position
-	
 	if agent.navigation_agent_3d.is_target_reached() or distance_to_target(target) <= agent.attack_range:
 		agent.animation_tree.blend_target = -1.0
 		return SUCCESS
-		
+
+	agent.navigation_agent_3d.target_position = target.global_position
 	var destination = agent.navigation_agent_3d.get_next_path_position()
-	var local_direction = destination - agent.global_position
-	var direction = local_direction.normalized()
+	var local_destination = destination - agent.global_position
+	var direction = local_destination.normalized()
 
 	agent.core_movement(direction)
 	agent.look_at_target(target.global_position)

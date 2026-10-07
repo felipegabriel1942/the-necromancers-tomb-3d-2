@@ -10,7 +10,6 @@ func _generate_name() -> String:
 	
 func _enter() -> void:
 	target = blackboard.get_var(target_var)
-	print(target)
 	
 func _tick(delta: float) -> Status:
 	if not is_instance_valid(target):
