@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bnyk4sieh7bho"]
+
+[ext_resource type="PackedScene" uid="uid://cntownttfo35a" path="res://Entities/Agents/Enemies/enemy.tscn" id="1_noet3"]
+[ext_resource type="PackedScene" uid="uid://do36t3mmplwvb" path="res://Assets/Models/Characters/Skeletons/Skeleton_Minion.glb" id="2_pkyr4"]
+
+[node name="SkeletonMinion" unique_id=649638333 instance=ExtResource("1_noet3")]
+
+[node name="Skeleton_Minion" parent="." index="0" unique_id=1225241915 instance=ExtResource("2_pkyr4")]
+
+[node name="CollisionShape3D" parent="." index="1" unique_id=1127346035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99073803, 0)
+
+[node name="HealthBar" parent="." index="4" unique_id=202608203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4179542, 0)

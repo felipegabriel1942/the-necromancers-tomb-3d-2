@@ -4,6 +4,7 @@ class_name Sword
 @onready var shape_cast_3d: ShapeCast3D = $ShapeCast3D
 @onready var attack_component: AttackComponent = $AttackComponent
 @onready var attack_audio: AudioStreamPlayer3D = $AttackAudio
+@onready var trail: GPUTrail3D = $Trail
 
 @export var collision_enabled: bool = false:
 	set(value):
@@ -12,3 +13,6 @@ class_name Sword
 			
 		collision_enabled = value
 		shape_cast_3d.enabled = collision_enabled
+
+func set_trail_length(length_in: int) -> void:
+	trail.length = length_in

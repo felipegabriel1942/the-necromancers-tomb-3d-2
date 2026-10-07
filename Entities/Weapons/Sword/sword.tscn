@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://dqrt23gcbp7gt" path="res://Entities/Weapons/Sword/sword.gd" id="1_s1r8x"]
 [ext_resource type="Script" uid="uid://dldw5cp071omj" path="res://Components/AttackComponent.gd" id="3_e1xto"]
 [ext_resource type="AudioStream" uid="uid://cw2ltq62s1v1w" path="res://Assets/Audio/weapon-swing.ogg" id="4_7f17r"]
+[ext_resource type="Shader" uid="uid://dupwdqi3xwqkq" path="res://addons/GPUTrail-main/shaders/trail.gdshader" id="5_pn11d"]
+[ext_resource type="Shader" uid="uid://chw2sb0lglfib" path="res://addons/GPUTrail-main/shaders/trail_draw_pass.gdshader" id="6_uuwwo"]
+[ext_resource type="Script" uid="uid://x23yk72mqxiw" path="res://addons/GPUTrail-main/GPUTrail3D.gd" id="7_enai2"]
+[ext_resource type="Texture2D" uid="uid://crk6pkb7e5rwc" path="res://addons/GPUTrail-main/defaults/texture.tres" id="7_uuwwo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmlwf"]
 resource_name = "knight"
@@ -48,6 +52,38 @@ shadow_mesh = SubResource("ArrayMesh_kga0s")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k5wxt"]
+shader = ExtResource("5_pn11d")
+
+[sub_resource type="Gradient" id="Gradient_hay8p"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2afys"]
+gradient = SubResource("Gradient_hay8p")
+
+[sub_resource type="Curve" id="Curve_o762d"]
+bake_resolution = 16
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_li5qp"]
+curve = SubResource("Curve_o762d")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ex6d5"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_uuwwo")
+shader_parameter/tex = ExtResource("7_uuwwo")
+shader_parameter/mask_strength = 1.0
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/color_ramp = SubResource("GradientTexture1D_2afys")
+shader_parameter/curve = SubResource("CurveTexture_li5qp")
+shader_parameter/emmission_transform = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/flags = 40
+
+[sub_resource type="QuadMesh" id="QuadMesh_m5jlc"]
+material = SubResource("ShaderMaterial_ex6d5")
+
 [node name="Sword" type="Node3D" unique_id=1516792581]
 script = ExtResource("1_s1r8x")
 
@@ -67,3 +103,18 @@ attack_shapecast = NodePath("../ShapeCast3D")
 [node name="AttackAudio" type="AudioStreamPlayer3D" parent="." unique_id=919587601]
 stream = ExtResource("4_7f17r")
 bus = &"SFX"
+
+[node name="Trail" type="GPUParticles3D" parent="." unique_id=146139269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78718376, 0)
+amount = 1
+explosiveness = 1.0
+fixed_fps = 59
+process_material = SubResource("ShaderMaterial_k5wxt")
+draw_pass_1 = SubResource("QuadMesh_m5jlc")
+script = ExtResource("7_enai2")
+length = 1
+length_seconds = 0.01694915254237288
+color_ramp = SubResource("GradientTexture1D_2afys")
+curve = SubResource("CurveTexture_li5qp")
+_defaults_have_been_set = true
+metadata/_custom_type_script = "uid://x23yk72mqxiw"
