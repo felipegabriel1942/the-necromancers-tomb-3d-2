@@ -18,6 +18,8 @@ sky = SubResource("Sky_sjjkl")
 glow_enabled = true
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_xrivr"]
+vertices = PackedVector3Array(-10.5, 0.65, -15.5, -10.5, 0.65, 10.5, 7.5, 0.65, 10.5, 7.5, 0.65, -15.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [node name="LevelTemplate" type="Node3D" unique_id=2127177574]
 

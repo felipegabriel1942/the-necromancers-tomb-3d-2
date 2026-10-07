@@ -26,4 +26,8 @@ bus = &"SFX"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4179542, 0)
 health_component = NodePath("../HealthComponent")
 
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=712742972]
+
+[node name="ModelRoot" type="Node3D" parent="." unique_id=1365185844]
+
 [connection signal="defeat" from="HealthComponent" to="." method="on_defeat"]

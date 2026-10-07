@@ -1,6 +1,6 @@
 extends Enemy
 
-@onready var animation_tree: AnimationTree = $Skeleton_Minion/AnimationTree
+@onready var animation_tree: AnimationTree = $ModelRoot/Skeleton_Minion/AnimationTree
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 @onready var bt_player: BTPlayer = $BTPlayer
 
