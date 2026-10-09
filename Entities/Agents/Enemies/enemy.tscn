@@ -32,10 +32,10 @@ health_component = NodePath("../HealthComponent")
 
 [node name="ModelRoot" type="Node3D" parent="." unique_id=1365185844]
 
-[node name="AttackArea" type="ShapeCast3D" parent="." unique_id=1144090939]
+[node name="AttackArea" type="ShapeCast3D" parent="ModelRoot" unique_id=1144090939]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.007789, 1.4509943)
 script = ExtResource("5_lq547")
 
 [connection signal="defeat" from="HealthComponent" to="." method="on_defeat"]
-[connection signal="player_entered" from="AttackArea" to="." method="_on_attack_area_player_entered"]
-[connection signal="player_exit" from="AttackArea" to="." method="_on_attack_area_player_exit"]
+[connection signal="player_entered" from="ModelRoot/AttackArea" to="." method="_on_attack_area_player_entered"]
+[connection signal="player_exit" from="ModelRoot/AttackArea" to="." method="_on_attack_area_player_exit"]

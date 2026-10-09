@@ -21,6 +21,9 @@ func _enter() -> void:
 func _tick(delta: float) -> Status:
 	agent.skeleton_blade.attack_component.deal_damage(10, Vector3.FORWARD)
 	
+	if not agent.player_in_attack_range and not attacking:
+		return FAILURE
+	
 	if attacking:
 		return RUNNING
 	
