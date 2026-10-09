@@ -28,7 +28,7 @@ func _tick(delta: float) -> Status:
 		cooldown_timer -= delta
 		return RUNNING
 	
-	if distance_to_target(target) <= agent.attack_range:
+	if agent.player_in_attack_range:
 		attack()
 		return RUNNING
 	

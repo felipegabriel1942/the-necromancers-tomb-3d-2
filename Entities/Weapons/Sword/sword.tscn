@@ -63,7 +63,7 @@ gradient = SubResource("Gradient_hay8p")
 
 [sub_resource type="Curve" id="Curve_o762d"]
 bake_resolution = 16
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.003976144, 0.7836538), 0.0, 0.0, 0, 0, Vector2(0.99999994, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_li5qp"]
@@ -108,7 +108,6 @@ bus = &"SFX"
 
 [node name="Trail" type="GPUParticles3D" parent="." unique_id=146139269]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78718376, 0)
-amount = 1
 explosiveness = 1.0
 fixed_fps = 59
 process_material = SubResource("ShaderMaterial_k5wxt")

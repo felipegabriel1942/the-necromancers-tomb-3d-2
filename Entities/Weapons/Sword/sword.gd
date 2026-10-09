@@ -14,5 +14,5 @@ class_name Sword
 		collision_enabled = value
 		shape_cast_3d.enabled = collision_enabled
 
-func set_trail_length(length_in: int) -> void:
-	trail.length = length_in
+func set_trail_lenght(value: int) -> void:
+	trail.length = value

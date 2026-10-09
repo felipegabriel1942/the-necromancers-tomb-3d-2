@@ -16,7 +16,7 @@ func _tick(delta: float) -> Status:
 	if not is_instance_valid(target):
 		return FAILURE
 	
-	if agent.navigation_agent_3d.is_target_reached() or distance_to_target(target) <= agent.attack_range:
+	if agent.navigation_agent_3d.is_target_reached() or agent.player_in_attack_range:
 		agent.animation_tree.blend_target = -1.0
 		return SUCCESS
 

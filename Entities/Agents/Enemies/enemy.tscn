@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dwlbkx3mvgabi" path="res://Entities/Agents/Enemies/enemy.gd" id="1_cx3wy"]
 [ext_resource type="AudioStream" uid="uid://dfsgqj5687246" path="res://Assets/Audio/hit.ogg" id="2_cx3wy"]
 [ext_resource type="PackedScene" uid="uid://cvqtlx7uffhfb" path="res://Components/health_bar.tscn" id="3_lq547"]
+[ext_resource type="Script" uid="uid://b4y1qaeru3oqu" path="res://Entities/Agents/Enemies/attack_area.gd" id="5_lq547"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
 
@@ -31,4 +32,10 @@ health_component = NodePath("../HealthComponent")
 
 [node name="ModelRoot" type="Node3D" parent="." unique_id=1365185844]
 
+[node name="AttackArea" type="ShapeCast3D" parent="." unique_id=1144090939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.007789, 1.4509943)
+script = ExtResource("5_lq547")
+
 [connection signal="defeat" from="HealthComponent" to="." method="on_defeat"]
+[connection signal="player_entered" from="AttackArea" to="." method="_on_attack_area_player_entered"]
+[connection signal="player_exit" from="AttackArea" to="." method="_on_attack_area_player_exit"]
