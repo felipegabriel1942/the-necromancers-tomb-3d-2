@@ -8,6 +8,8 @@ extends Enemy
 func _ready() -> void:
 	if skeleton_blade.shape_cast_3d:
 		skeleton_blade.shape_cast_3d.add_exception(self)
+	
+	super._ready()
 
 func on_defeat() -> void:
 	collision_shape_3d.set_deferred("disabled", true)

@@ -29,6 +29,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4179542, 0)
 health_component = NodePath("../HealthComponent")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=712742972]
+path_desired_distance = 0.1
+target_desired_distance = 0.1
+avoidance_enabled = true
+radius = 0.4
+max_neighbors = 8
+time_horizon_agents = 3.0
+max_speed = 3.0
 
 [node name="ModelRoot" type="Node3D" parent="." unique_id=1365185844]
 
@@ -36,6 +43,11 @@ health_component = NodePath("../HealthComponent")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.007789, 1.4509943)
 script = ExtResource("5_lq547")
 
+[node name="PathTimer" type="Timer" parent="." unique_id=1571457561]
+wait_time = 0.25
+autostart = true
+
 [connection signal="defeat" from="HealthComponent" to="." method="on_defeat"]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
 [connection signal="player_entered" from="ModelRoot/AttackArea" to="." method="_on_attack_area_player_entered"]
 [connection signal="player_exit" from="ModelRoot/AttackArea" to="." method="_on_attack_area_player_exit"]

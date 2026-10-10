@@ -10,5 +10,6 @@ func _update(delta: float) -> void:
 	if input.is_zero_approx():
 		dispatch("idle")
 	
+	agent.moved.emit()
 	core_movement(delta, agent.movement_speed)
 	agent.move_and_slide()

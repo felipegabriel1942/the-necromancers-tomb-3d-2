@@ -16,18 +16,21 @@ func _tick(delta: float) -> Status:
 	if not is_instance_valid(target):
 		return FAILURE
 	
-	if agent.navigation_agent_3d.is_target_reached() or agent.player_in_attack_range:
+	if agent.attack_slot == null:
+		return FAILURE
+	
+	if agent.navigation_agent_3d.is_navigation_finished() or agent.player_in_attack_range:
 		agent.animation_tree.blend_target = -1.0
+		agent.velocity = Vector3.ZERO
+		agent.look_at_target(target.global_position)
+		agent.navigation_agent_3d.set_velocity(Vector3.ZERO)
 		return SUCCESS
-
-	agent.navigation_agent_3d.target_position = target.global_position
-	var destination = agent.navigation_agent_3d.get_next_path_position()
-	var local_destination = destination - agent.global_position
-	var direction = local_destination.normalized()
-
-	agent.core_movement(direction)
+	
+	var next_path_position: Vector3 = agent.navigation_agent_3d.get_next_path_position()
+	var new_velocity: Vector3 = agent.global_position.direction_to(next_path_position) * agent.speed
+	
+	agent.navigation_agent_3d.set_velocity(new_velocity)
 	agent.look_at_target(target.global_position)
-	agent.move_and_slide()
 	
 	return RUNNING
 	

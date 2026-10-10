@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c3wtl5hkjiqxy"]
+
+[ext_resource type="Script" uid="uid://bsrrrflnoli21" path="res://Entities/Agents/Player/attack_slot.gd" id="1_30djm"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_xrivr"]
+radius = 0.25
+height = 0.5
+
+[node name="AttackSlot" type="Node3D" unique_id=511707575]
+script = ExtResource("1_30djm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1272275953]
+mesh = SubResource("SphereMesh_xrivr")

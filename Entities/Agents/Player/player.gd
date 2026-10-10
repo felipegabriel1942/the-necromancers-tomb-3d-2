@@ -1,6 +1,9 @@
 extends CharacterBody3D
 class_name Player
 
+
+signal moved()
+
 @export var decay := 12.0
 @export var movement_speed := 8.0
 @export var attack := 20
@@ -13,6 +16,7 @@ class_name Player
 @onready var run: PlayerState = $StateMachine/Run
 @onready var attack_01: PlayerState = $StateMachine/Attack_01
 @onready var sword: Sword = $PlayerRoot/Rig_Medium/Skeleton3D/WeaponSlot/WeaponRoot/Sword
+@onready var attack_slots: Node3D = $PlayerRoot/AttackSlots
 
 func _ready() -> void:
 	state_machine.add_transition(idle, run, "run")
