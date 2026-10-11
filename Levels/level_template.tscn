@@ -4,6 +4,7 @@
 [ext_resource type="MeshLibrary" uid="uid://d2ci051leggdh" path="res://Levels/Gridmap/wallmap.res" id="2_s7a6p"]
 [ext_resource type="PackedScene" uid="uid://hpm80wwpunhw" path="res://Entities/Agents/Player/player.tscn" id="3_nsw7g"]
 [ext_resource type="PackedScene" uid="uid://dj4n7bo2kpqtc" path="res://Entities/Agents/Enemies/minion_archer.tscn" id="4_sjjkl"]
+[ext_resource type="PackedScene" uid="uid://bnyk4sieh7bho" path="res://Entities/Agents/Enemies/skeleton_minion.tscn" id="5_rbi8j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nsw7g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -55,5 +56,21 @@ data = {
 [node name="Player" parent="." unique_id=1502439064 instance=ExtResource("3_nsw7g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2611647, 0.29999995, 8.272126)
 
-[node name="MinionArcher" parent="." unique_id=649638333 instance=ExtResource("4_sjjkl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30256742, -4.8704424)
+[node name="Enemies" type="Node3D" parent="." unique_id=2132444570]
+
+[node name="SkeletonMinion" parent="Enemies" unique_id=649638333 instance=ExtResource("5_rbi8j")]
+
+[node name="SkeletonMinion2" parent="Enemies" unique_id=1345562566 instance=ExtResource("5_rbi8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4672885, 0, 0)
+
+[node name="SkeletonMinion3" parent="Enemies" unique_id=1114718876 instance=ExtResource("5_rbi8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.101521, 0, 0)
+
+[node name="SkeletonMinion4" parent="Enemies" unique_id=1908576551 instance=ExtResource("5_rbi8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.627914, 0, 0.303442)
+
+[node name="MinionArcher2" parent="Enemies" unique_id=376335452 instance=ExtResource("4_sjjkl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4)
+
+[node name="MinionArcher3" parent="Enemies" unique_id=1465744478 instance=ExtResource("4_sjjkl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)

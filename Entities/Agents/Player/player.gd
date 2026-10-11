@@ -14,16 +14,24 @@ signal moved()
 @onready var idle: PlayerState = $StateMachine/Idle
 @onready var run: PlayerState = $StateMachine/Run
 @onready var attack_01: PlayerState = $StateMachine/Attack_01
+@onready var attack_02: PlayerState = $StateMachine/Attack_02
+@onready var attack_03: PlayerState = $StateMachine/Attack_03
+
 @onready var sword: Sword = $PlayerRoot/Rig_Medium/Skeleton3D/WeaponSlot/WeaponRoot/Sword
 @onready var attack_slots: Node3D = $PlayerRoot/AttackSlots
+@onready var impulse_component: ImpulseComponent = $ImpulseComponent
 
 func _ready() -> void:
-	state_machine.add_transition(idle, run, "run")
-	state_machine.add_transition(run, idle, "idle")
-	state_machine.add_transition(idle, attack_01, "attack_01")
-	state_machine.add_transition(run, attack_01, "attack_01")
+	state_machine.add_transition(idle, run, run.name)
+	state_machine.add_transition(run, idle, idle.name)
+	state_machine.add_transition(idle, attack_01, attack_01.name)
+	state_machine.add_transition(run, attack_01, attack_01.name)
 	state_machine.add_transition(attack_01, idle, attack_01.EVENT_FINISHED)
-	
+	state_machine.add_transition(attack_01, attack_02, attack_02.name)
+	state_machine.add_transition(attack_02, idle, attack_02.EVENT_FINISHED)
+	state_machine.add_transition(attack_02, attack_03, attack_03.name)
+	state_machine.add_transition(attack_03, idle, attack_03.EVENT_FINISHED)
+		
 	state_machine.initial_state = idle
 	state_machine.initialize(self)
 	state_machine.set_active(true)

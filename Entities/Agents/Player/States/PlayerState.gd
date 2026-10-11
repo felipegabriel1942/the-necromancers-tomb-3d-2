@@ -1,6 +1,8 @@
 extends LimboState
 class_name PlayerState
 
+@export var attack: PlayerState
+
 func core_movement(delta: float, speed: float) -> void:
 	var direction = agent.get_movement_direction()
 	agent.velocity = direction * speed
@@ -8,4 +10,4 @@ func core_movement(delta: float, speed: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("melee_attack"):
-		dispatch("attack_01")
+		dispatch(attack.name)
