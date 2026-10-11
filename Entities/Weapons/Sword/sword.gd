@@ -1,6 +1,8 @@
 extends Node3D
 class_name Sword
 
+@export var knockback := 5.0
+
 @onready var shape_cast_3d: ShapeCast3D = $ShapeCast3D
 @onready var attack_component: AttackComponent = $AttackComponent
 @onready var attack_audio: AudioStreamPlayer3D = $AttackAudio

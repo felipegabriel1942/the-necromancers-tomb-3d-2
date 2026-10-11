@@ -3,11 +3,13 @@ class_name Enemy
 
 @export var speed: float  = 3.0
 @export var attack_range: float = 2.0
+@export var weapon: Node3D
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var model_root: Node3D = $ModelRoot
 @onready var player: Player = get_tree().get_first_node_in_group("player")
 @onready var path_timer: Timer = $PathTimer
+@onready var knockback_component: KnockbackComponent = $KnockbackComponent
 
 var player_in_attack_range: bool = false
 var attack_slot
@@ -56,10 +58,15 @@ func acquire_attack_slot() -> bool:
 	return true
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
-	if not player_in_attack_range:
+	velocity = Vector3.ZERO
+	
+	if not player_in_attack_range and not knockback_component.is_active():
 		velocity = safe_velocity
 	
-		move_and_slide()
+	if knockback_component.is_active():
+		velocity = knockback_component.magnitude
+	
+	move_and_slide()
 
 func update_path() -> void:
 	acquire_attack_slot()

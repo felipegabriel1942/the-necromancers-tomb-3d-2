@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bac3tymqr5y48" path="res://Entities/Agents/Player/player.gd" id="1_p6bf3"]
 [ext_resource type="PackedScene" uid="uid://b0bldiqhd835c" path="res://Assets/Models/Characters/Knight/Knight.glb" id="1_pndqj"]
 [ext_resource type="PackedScene" uid="uid://cvqtlx7uffhfb" path="res://Components/health_bar.tscn" id="3_4u7pf"]
+[ext_resource type="Script" uid="uid://dw8mmtmnp362q" path="res://Components/KnockbackComponent.gd" id="3_38q8j"]
 [ext_resource type="PackedScene" uid="uid://bhhkv7s2mskhp" path="res://Entities/Weapons/Sword/sword.tscn" id="3_oxerk"]
 [ext_resource type="Script" uid="uid://chox82pd538hb" path="res://Entities/Agents/Player/States/IdleState.gd" id="3_p6bf3"]
 [ext_resource type="Animation" uid="uid://b6l1kkvoidr6c" path="res://Assets/Models/Animations/Death_A.res" id="3_smtuq"]
@@ -154,15 +155,15 @@ graph_offset = Vector2(131.01846, 151.00833)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
-radius = 1.0
-
 [node name="Player" type="CharacterBody3D" unique_id=1502439064 groups=["player"]]
 collision_mask = 6
 script = ExtResource("1_p6bf3")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1796782406]
 script = ExtResource("22_h8p51")
+
+[node name="KnockbackComponent" type="Node" parent="." unique_id=313422789]
+script = ExtResource("3_38q8j")
 
 [node name="HealthBar" parent="." unique_id=202608203 node_paths=PackedStringArray("health_component") instance=ExtResource("3_4u7pf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8396285, 0)
@@ -172,67 +173,67 @@ health_component = NodePath("../HealthComponent")
 transform = Transform3D(-0.70710677, -0.5416752, 0.45451948, 0, 0.64278764, 0.76604444, -0.70710677, 0.5416752, -0.45451948, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraRoot" unique_id=2122674020]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
 fov = 65.0
 
 [node name="PlayerRoot" parent="." unique_id=2135776885 instance=ExtResource("1_pndqj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="PlayerRoot/Rig_Medium" parent_id_path=PackedInt32Array(2135776885, 2120894749) index="0" unique_id=55680919]
-bones/1/position = Vector3(-1.7469895e-20, 0.39176416, -4.1651467e-27)
-bones/1/rotation = Quaternion(0.0008580825, 0.042898845, -3.6842124e-05, 0.9990791)
+bones/1/position = Vector3(5.616151e-21, 0.39228886, 1.3389947e-27)
+bones/1/rotation = Quaternion(0.00059824414, 0.042898852, -2.5685087e-05, 0.99907935)
 bones/1/scale = Vector3(0.99999994, 1, 0.99999994)
-bones/2/rotation = Quaternion(0.0002500811, 7.105413e-15, -9.0909023e-20, 1)
+bones/2/rotation = Quaternion(1.2506167e-05, 7.1054274e-15, -8.8861267e-20, 1)
 bones/2/scale = Vector3(1.0000001, 1, 1.0000001)
-bones/3/rotation = Quaternion(0.004829133, 1.699001e-05, 0.0004966283, 0.9999882)
+bones/3/rotation = Quaternion(0.0048487554, 1.6780554e-05, 0.0004966711, 0.99998814)
 bones/3/scale = Vector3(1, 0.9999999, 1)
-bones/4/position = Vector3(0.21193361, 0.13403796, -0.0002745984)
-bones/4/rotation = Quaternion(-0.5341176, -0.11678229, -0.77069265, 0.32728133)
+bones/4/position = Vector3(0.21185656, 0.13399938, -0.00025378607)
+bones/4/rotation = Quaternion(-0.5341695, -0.117836334, -0.77123094, 0.32554638)
 bones/4/scale = Vector3(0.9999993, 0.99999905, 0.9999998)
-bones/5/rotation = Quaternion(1.2290811e-08, -6.4122595e-08, -0.36027902, 0.93284464)
+bones/5/rotation = Quaternion(1.2603396e-08, -6.4153234e-08, -0.359654, 0.9330858)
 bones/5/scale = Vector3(1.0000004, 0.9999998, 1)
 bones/6/rotation = Quaternion(1.5055068e-08, -7.3161175e-09, 0.0266581, 0.99964464)
 bones/6/scale = Vector3(1.0000001, 1, 1)
-bones/7/rotation = Quaternion(-0.22052056, -0.34663475, 0.18303154, 0.8931487)
+bones/7/rotation = Quaternion(-0.2202375, -0.3462165, 0.18455417, 0.8930674)
 bones/7/scale = Vector3(0.99999976, 1.0000001, 1.0000004)
 bones/8/position = Vector3(5.138497e-10, 0.096125126, -0.057500005)
 bones/8/rotation = Quaternion(-0.00033000702, 0.00033001014, -0.7061995, 0.7080127)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/position = Vector3(-0.21192728, 0.13403492, -0.0002728897)
-bones/9/rotation = Quaternion(-0.56107146, 0.047381744, 0.73586214, 0.3761126)
+bones/9/position = Vector3(-0.21200433, 0.13407348, -0.0002937021)
+bones/9/rotation = Quaternion(-0.5599767, 0.046202283, 0.73625433, 0.37712196)
 bones/9/scale = Vector3(0.9999992, 0.9999988, 0.9999998)
-bones/10/rotation = Quaternion(-9.001625e-09, 4.70423e-08, 0.37812316, 0.9257554)
+bones/10/rotation = Quaternion(-9.2732515e-09, 4.697255e-08, 0.3771858, 0.9261377)
 bones/10/scale = Vector3(1.0000004, 0.99999976, 1.0000001)
 bones/11/rotation = Quaternion(2.2393214e-10, 6.785567e-09, -0.026658092, 0.99964464)
 bones/11/scale = Vector3(0.99999994, 0.99999994, 1)
-bones/12/rotation = Quaternion(-0.21101062, 0.38464174, -0.13911493, 0.8877907)
+bones/12/rotation = Quaternion(-0.21022081, 0.3851767, -0.13664559, 0.88812953)
 bones/12/scale = Vector3(0.9999995, 0.99999994, 1.0000005)
 bones/13/position = Vector3(-1.5325583e-08, 0.096125185, -0.057500005)
 bones/13/rotation = Quaternion(-0.00033000694, -0.00033001023, 0.7061995, 0.7080127)
 bones/13/scale = Vector3(1, 1.0000001, 1.0000001)
-bones/14/rotation = Quaternion(-0.0039967163, -0.031136014, -0.00021180502, 0.9995072)
+bones/14/rotation = Quaternion(-0.003719007, -0.031148206, -0.00020098027, 0.9995079)
 bones/14/scale = Vector3(0.99999994, 1, 1)
-bones/15/position = Vector3(-0.17094508, 0.11358732, -2.460513e-05)
-bones/15/rotation = Quaternion(0.99742943, -0.02923687, 0.031381194, 0.057402745)
+bones/15/position = Vector3(-0.17094508, 0.11358732, 0.0005766352)
+bones/15/rotation = Quaternion(0.99720377, -0.029356046, 0.031269733, 0.061197046)
 bones/15/scale = Vector3(0.9999999, 0.99999976, 1.0000008)
-bones/16/rotation = Quaternion(0.27241686, -6.386107e-08, 1.9164256e-07, 0.96217936)
+bones/16/rotation = Quaternion(0.2732009, -6.3843714e-08, 1.9218496e-07, 0.961957)
 bones/16/scale = Vector3(0.99999994, 0.99999976, 0.99999994)
-bones/17/rotation = Quaternion(-0.55957556, 0.113843486, -0.008421916, 0.82088)
+bones/17/rotation = Quaternion(-0.55897087, 0.11383725, -0.008505749, 0.8212918)
 bones/17/scale = Vector3(0.99999976, 1.0000006, 0.9999992)
-bones/18/rotation = Quaternion(-8.8809444e-05, 0.9201634, -0.39153484, 2.0182964e-05)
+bones/18/rotation = Quaternion(-8.881231e-05, 0.9202214, -0.39139846, 2.016983e-05)
 bones/18/scale = Vector3(1.0000002, 0.9999979, 1.0000024)
-bones/19/position = Vector3(0.17094508, 0.1135872, 2.4636787e-05)
-bones/19/rotation = Quaternion(0.9920611, 0.05749023, 0.07026475, 0.08702071)
+bones/19/position = Vector3(0.17094508, 0.1135872, -0.00057660346)
+bones/19/rotation = Quaternion(0.99257153, 0.057916187, 0.06991406, 0.08099003)
 bones/19/scale = Vector3(0.9999999, 0.9999997, 1.0000008)
-bones/20/rotation = Quaternion(0.26681876, 6.5066175e-08, -1.7660516e-07, 0.9637467)
+bones/20/rotation = Quaternion(0.26422834, 6.509209e-08, -1.748102e-07, 0.96446013)
 bones/20/scale = Vector3(1.0000004, 0.99999994, 1.0000001)
-bones/21/rotation = Quaternion(-0.5297315, -0.113692, 0.041557506, 0.839483)
+bones/21/rotation = Quaternion(-0.52996314, -0.11370345, 0.041526128, 0.83933675)
 bones/21/scale = Vector3(1.0000004, 1.0000007, 0.9999993)
-bones/22/rotation = Quaternion(1.5271833e-05, 0.92026, -0.39130768, -3.3995623e-06)
+bones/22/rotation = Quaternion(1.5271833e-05, 0.9202601, -0.3913072, -3.3995098e-06)
 bones/22/scale = Vector3(1.0000001, 0.9999975, 1.0000027)
 
 [node name="WeaponSlot" type="BoneAttachment3D" parent="PlayerRoot/Rig_Medium/Skeleton3D" index="9" unique_id=862004456]
-transform = Transform3D(0.26362413, -0.0042687953, -0.964616, -0.004867375, -0.9999821, 0.003096193, -0.96461236, 0.0038784742, -0.2636404, -0.48044163, 0.6322915, 0.0671591)
+transform = Transform3D(0.2633775, -0.0062684715, -0.96467257, -0.006321639, -0.99996734, 0.0047729015, -0.96467125, 0.0048408806, -0.26340863, -0.48098847, 0.6327026, 0.06500615)
 bone_name = "hand.r"
 bone_idx = 12
 
@@ -289,12 +290,5 @@ script = ExtResource("4_dejx3")
 [node name="Attack_01" type="LimboState" parent="StateMachine" unique_id=1230720195]
 script = ExtResource("21_oxerk")
 attack_animation_name = "Melee_1H_Attack_Slice_Diagonal"
-
-[node name="Area3D" type="Area3D" parent="." unique_id=1309700568]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1242467739]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56683683, 0)
-shape = SubResource("SphereShape3D_xrivr")
-debug_color = Color(0.8700782, 0.29440537, 0.49909043, 0.41960785)
 
 [editable path="PlayerRoot"]

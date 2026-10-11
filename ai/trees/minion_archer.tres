@@ -1,0 +1,29 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://c4pq8q615u5as"]
+
+[ext_resource type="Script" uid="uid://bgrfulyr2wogo" path="res://ai/tasks/get_first_in_group.gd" id="1_i54o2"]
+[ext_resource type="Script" uid="uid://c35ldege1sqbv" path="res://ai/tasks/face_target.gd" id="2_c3w8d"]
+[ext_resource type="Script" uid="uid://b73eb68s6inv3" path="res://ai/tasks/pursue.gd" id="3_1yym1"]
+[ext_resource type="Script" uid="uid://bfida25m20b8a" path="res://ai/tasks/attack_target.gd" id="4_wwga5"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_63rqr"]
+
+[sub_resource type="BTAction" id="BTAction_c3w8d"]
+script = ExtResource("1_i54o2")
+group = &"player"
+
+[sub_resource type="BTAction" id="BTAction_1yym1"]
+script = ExtResource("2_c3w8d")
+
+[sub_resource type="BTAction" id="BTAction_wwga5"]
+script = ExtResource("3_1yym1")
+
+[sub_resource type="BTAction" id="BTAction_8mo5g"]
+script = ExtResource("4_wwga5")
+attack_interval = 1.0
+
+[sub_resource type="BTSequence" id="BTSequence_63rqr"]
+children = [SubResource("BTAction_c3w8d"), SubResource("BTAction_1yym1"), SubResource("BTAction_wwga5"), SubResource("BTAction_8mo5g")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_63rqr")
+root_task = SubResource("BTSequence_63rqr")

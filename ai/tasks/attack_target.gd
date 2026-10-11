@@ -13,13 +13,13 @@ func _generate_name() -> String:
 	
 func _enter() -> void:
 	target = blackboard.get_var(target_var)
-	cooldown_timer = 1.0
 	
 	if not agent.animation_tree.animation_finished.is_connected(end_attack):
 		agent.animation_tree.animation_finished.connect(end_attack)
 
 func _tick(delta: float) -> Status:
-	agent.skeleton_blade.attack_component.deal_damage(10, Vector3.FORWARD)
+	if agent.weapon.has_node("AttackComponent"):
+		agent.weapon.attack_component.deal_damage(10, Vector3.FORWARD)
 	
 	if not agent.player_in_attack_range and not attacking:
 		return FAILURE
@@ -44,7 +44,10 @@ func attack() -> void:
 
 func end_attack(_animation_name: String) -> void:
 	attacking = false
-	agent.skeleton_blade.attack_component.reset_exceptions()
+
+	if agent.weapon.has_node("AttackComponent"):
+		agent.weapon.attack_component.reset_exceptions()
+
 	cooldown_timer = attack_interval
 
 func distance_to_target(target: Node3D) -> float:

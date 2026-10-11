@@ -108,6 +108,7 @@ bus = &"SFX"
 
 [node name="Trail" type="GPUParticles3D" parent="." unique_id=146139269]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78718376, 0)
+amount = 1
 explosiveness = 1.0
 fixed_fps = 59
 process_material = SubResource("ShaderMaterial_k5wxt")

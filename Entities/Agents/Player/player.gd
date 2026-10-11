@@ -1,12 +1,11 @@
 extends CharacterBody3D
 class_name Player
 
-
 signal moved()
 
 @export var decay := 12.0
 @export var movement_speed := 8.0
-@export var attack := 20
+@export var attack := 30
 
 @onready var player_root: Node3D = $PlayerRoot
 @onready var animation_tree: AnimationTree = $PlayerRoot/AnimationTree
@@ -24,7 +23,6 @@ func _ready() -> void:
 	state_machine.add_transition(idle, attack_01, "attack_01")
 	state_machine.add_transition(run, attack_01, "attack_01")
 	state_machine.add_transition(attack_01, idle, attack_01.EVENT_FINISHED)
-	#state_machine.add_transition(attack_01, run, attack_01.EVENT_FINISHED)
 	
 	state_machine.initial_state = idle
 	state_machine.initialize(self)
