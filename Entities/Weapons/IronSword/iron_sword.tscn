@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://du42raxn8a7tp"]
+
+[ext_resource type="PackedScene" uid="uid://ut0a6mmsi6xl" path="res://Entities/Weapons/melee_weapon.tscn" id="1_1jqgq"]
+[ext_resource type="PackedScene" uid="uid://bphn47pjn5jfo" path="res://Assets/Models/Characters/Knight/sword_1handed.gltf" id="2_2clmn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wwga5"]
+
+[node name="IronSword" unique_id=351045627 instance=ExtResource("1_1jqgq")]
+
+[node name="sword_1handed2" parent="." index="0" unique_id=1467857250 instance=ExtResource("2_2clmn")]
+
+[node name="ShapeCast3D" parent="." index="1" unique_id=336500179]
+shape = SubResource("BoxShape3D_wwga5")
+target_position = Vector3(0, 1, 0)
+collision_mask = 2

@@ -11,7 +11,7 @@ func _enter() -> void:
 	queued_attack = false
 	printt("AttackState", queued_attack)
 	agent.impulse_component.add_impulse(agent.player_root.global_basis.z * impulse)
-	agent.sword.attack_component.reset_exceptions()
+	agent.weapon.attack_component.reset_exceptions()
 	agent.animation_tree.change_immediate(attack_animation_name)
 	agent.animation_tree.animation_finished.connect(finish_attack, CONNECT_ONE_SHOT)
 	var timer = get_tree().create_timer(queued_attack_time)
@@ -21,9 +21,9 @@ func _update(delta: float) -> void:
 	if agent.impulse_component.is_active():
 		agent.velocity = agent.impulse_component.magnitude
 		
-	agent.sword.attack_component.deal_damage(
+	agent.weapon.attack_component.deal_damage(
 		agent.attack, 
-		agent.player_root.global_basis.z * agent.sword.knockback)
+		agent.player_root.global_basis.z * agent.weapon.knockback)
 	
 	agent.move_and_slide()
 	

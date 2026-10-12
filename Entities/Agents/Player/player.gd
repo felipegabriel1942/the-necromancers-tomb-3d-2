@@ -17,11 +17,15 @@ signal moved()
 @onready var attack_02: PlayerState = $StateMachine/Attack_02
 @onready var attack_03: PlayerState = $StateMachine/Attack_03
 
-@onready var sword: Sword = $PlayerRoot/Rig_Medium/Skeleton3D/WeaponSlot/WeaponRoot/Sword
+@onready var weapon_root: WeaponRoot = $PlayerRoot/Rig_Medium/Skeleton3D/WeaponSlot/WeaponRoot
 @onready var attack_slots: Node3D = $PlayerRoot/AttackSlots
 @onready var impulse_component: ImpulseComponent = $ImpulseComponent
 
+var weapon: Node3D
+
 func _ready() -> void:
+	
+	weapon = weapon_root.get_child(0)
 	state_machine.add_transition(idle, run, run.name)
 	state_machine.add_transition(run, idle, idle.name)
 	state_machine.add_transition(idle, attack_01, attack_01.name)
