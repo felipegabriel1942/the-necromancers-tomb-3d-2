@@ -44,7 +44,7 @@ _subresources={
 "Melee_1H_Attack_Chop": {
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://Assets/Models/Animations/Melee_1H_Attack_Chop.res",
-"save_to_file/keep_custom_tracks": "",
+"save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "uid://c7en7uaptq2ms",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
@@ -2100,7 +2100,7 @@ _subresources={
 "Melee_1H_Attack_Jump_Chop": {
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://Assets/Models/Animations/Melee_1H_Attack_Jump_Chop.res",
-"save_to_file/keep_custom_tracks": "",
+"save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "uid://cue1xatql2hnc",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
@@ -4156,7 +4156,7 @@ _subresources={
 "Melee_1H_Attack_Slice_Diagonal": {
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://Assets/Models/Animations/Melee_1H_Attack_Slice_Diagonal.res",
-"save_to_file/keep_custom_tracks": "",
+"save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "uid://dkoxf1ucsgsei",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
@@ -6212,7 +6212,7 @@ _subresources={
 "Melee_1H_Attack_Slice_Horizontal": {
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://Assets/Models/Animations/Melee_1H_Attack_Slice_Horizontal.res",
-"save_to_file/keep_custom_tracks": "",
+"save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "uid://dcvt3b5dtsvlk",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
@@ -8268,7 +8268,7 @@ _subresources={
 "Melee_1H_Attack_Stab": {
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://Assets/Models/Animations/Melee_1H_Attack_Stab.res",
-"save_to_file/keep_custom_tracks": "",
+"save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "uid://dt7gyay4lafrb",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
@@ -10324,7 +10324,7 @@ _subresources={
 "Melee_2H_Attack_Spin": {
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://Assets/Models/Animations/Melee_2H_Attack_Spin.res",
-"save_to_file/keep_custom_tracks": "",
+"save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "uid://bq6riihbh8vpv",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,

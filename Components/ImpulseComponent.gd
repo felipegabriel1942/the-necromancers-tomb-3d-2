@@ -1,12 +1,14 @@
 extends Node
 class_name ImpulseComponent
 
-@export var decay := 8.0
+@export var decay := 3.0
 @export var max_impulse := 50.0
+@export var active := true
 
 var magnitude := Vector3.ZERO:
 	set(value):
-		magnitude = value.limit_length(max_impulse)
+		if active:
+			magnitude = value.limit_length(max_impulse)
 
 func _physics_process(delta: float) -> void:
 	magnitude = magnitude.lerp(Vector3.ZERO, 1.0 - exp(-decay * delta))

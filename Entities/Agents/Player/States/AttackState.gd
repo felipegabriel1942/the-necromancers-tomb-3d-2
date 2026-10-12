@@ -8,7 +8,8 @@ extends PlayerState
 var queued_attack := false
 
 func _enter() -> void:
-	print("AttackState")
+	queued_attack = false
+	printt("AttackState", queued_attack)
 	agent.impulse_component.add_impulse(agent.player_root.global_basis.z * impulse)
 	agent.sword.attack_component.reset_exceptions()
 	agent.animation_tree.change_immediate(attack_animation_name)

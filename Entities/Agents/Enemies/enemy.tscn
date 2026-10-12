@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b4y1qaeru3oqu" path="res://Entities/Agents/Enemies/attack_area.gd" id="5_lq547"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
+radius = 0.57910156
 
 [node name="Enemy" type="CharacterBody3D" unique_id=649638333]
 collision_layer = 2
