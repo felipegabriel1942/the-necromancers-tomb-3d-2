@@ -25,7 +25,7 @@ func _update(delta: float) -> void:
 		agent.attack, 
 		agent.player_root.global_basis.z * agent.weapon.knockback)
 	
-	agent.move_and_slide()
+	#agent.move_and_slide()
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("melee_attack"):

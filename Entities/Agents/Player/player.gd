@@ -24,7 +24,6 @@ signal moved()
 var weapon: Node3D
 
 func _ready() -> void:
-	
 	weapon = weapon_root.get_child(0)
 	state_machine.add_transition(idle, run, run.name)
 	state_machine.add_transition(run, idle, idle.name)

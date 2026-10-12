@@ -1,8 +1,18 @@
+@tool
 extends Node3D
 class_name WeaponRoot
 
 @export var weapon_scene: PackedScene
 
+var weapon
+
 func _ready() -> void:
-	var weapon = weapon_scene.instantiate()
+	weapon = weapon_scene.instantiate()
 	add_child(weapon)
+
+func set_trail_lenght(value: int) -> void:
+	weapon.set_trail_lenght(value)
+
+func set_collision(value_in: bool) -> void:
+	weapon.collision_enabled = value_in
+	

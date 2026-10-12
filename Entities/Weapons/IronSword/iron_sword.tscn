@@ -4,12 +4,27 @@
 [ext_resource type="PackedScene" uid="uid://bphn47pjn5jfo" path="res://Assets/Models/Characters/Knight/sword_1handed.gltf" id="2_2clmn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wwga5"]
+size = Vector3(0.5, 1.5, 0.5)
+
+[sub_resource type="Curve" id="Curve_8mo5g"]
+_data = [Vector2(0, 0.8076923), 0.0, 0.0, 0, 0, Vector2(0.9670659, 0.015384555), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2clmn"]
+curve = SubResource("Curve_8mo5g")
 
 [node name="IronSword" unique_id=351045627 instance=ExtResource("1_1jqgq")]
+knockback = 20.0
 
 [node name="sword_1handed2" parent="." index="0" unique_id=1467857250 instance=ExtResource("2_2clmn")]
 
 [node name="ShapeCast3D" parent="." index="1" unique_id=336500179]
 shape = SubResource("BoxShape3D_wwga5")
 target_position = Vector3(0, 1, 0)
+max_results = 8
 collision_mask = 2
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="GPUTrail3D" parent="." index="4" unique_id=884446481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80517554, 0)
+curve = SubResource("CurveTexture_2clmn")

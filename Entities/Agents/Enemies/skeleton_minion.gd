@@ -3,11 +3,12 @@ extends Enemy
 @onready var animation_tree: AnimationTree = $ModelRoot/Skeleton_Minion/AnimationTree
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 @onready var bt_player: BTPlayer = $BTPlayer
-@onready var skeleton_blade: Node3D = $ModelRoot/Skeleton_Minion/Rig_Medium/Skeleton3D/WeaponSlot/WeaponRoot/SkeletonBlade
+@onready var weapon_root: WeaponRoot = $ModelRoot/Skeleton_Minion/Rig_Medium/Skeleton3D/WeaponSlot/WeaponRoot
 
 func _ready() -> void:
-	if skeleton_blade.shape_cast_3d:
-		skeleton_blade.shape_cast_3d.add_exception(self)
+	weapon = weapon_root.get_child(0)
+	if weapon.shape_cast_3d:
+		weapon.shape_cast_3d.add_exception(self)
 	
 	super._ready()
 

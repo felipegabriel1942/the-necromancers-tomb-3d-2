@@ -3,7 +3,6 @@ class_name Enemy
 
 @export var speed: float  = 3.0
 @export var attack_range: float = 2.0
-@export var weapon: Node3D
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var model_root: Node3D = $ModelRoot
@@ -13,6 +12,7 @@ class_name Enemy
 
 var player_in_attack_range: bool = false
 var attack_slot
+var weapon
 
 func _ready() -> void:
 	path_timer.timeout.connect(update_path)
