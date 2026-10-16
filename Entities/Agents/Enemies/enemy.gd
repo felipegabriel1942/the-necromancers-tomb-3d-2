@@ -71,3 +71,18 @@ func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
 func update_path() -> void:
 	acquire_attack_slot()
 	navigation_agent_3d.set_target_position(attack_slot.global_position)
+
+
+func _on_health_changed(value: Variant) -> void:
+	get_viewport().get_camera_3d().quick_shake(0.2)
+	hit_stop(0.1)
+
+func hit_stop(duration: float) -> void:
+	Engine.time_scale = 0.0
+	await get_tree().create_timer(
+		duration,
+		true,
+		false,
+		true
+	).timeout
+	Engine.time_scale = 1.0

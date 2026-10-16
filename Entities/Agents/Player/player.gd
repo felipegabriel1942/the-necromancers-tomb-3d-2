@@ -9,6 +9,7 @@ signal moved()
 
 @onready var player_root: Node3D = $PlayerRoot
 @onready var animation_tree: AnimationTree = $PlayerRoot/AnimationTree
+@onready var camera_3d: Camera3D = $CameraRoot/Camera3D
 
 @onready var state_machine: LimboHSM = $StateMachine
 @onready var idle: PlayerState = $StateMachine/Idle
@@ -57,3 +58,6 @@ func look_toward_direction(direction: Vector3, delta: float) -> void:
 	player_root.global_transform = player_root.global_transform.interpolate_with(target, 
 		1.0 - exp(-decay * delta)
 	)
+
+func _on_health_changed(value: Variant) -> void:
+	get_viewport().get_camera_3d().quick_shake(0.75)

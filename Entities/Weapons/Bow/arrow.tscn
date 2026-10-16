@@ -44,6 +44,7 @@ material = SubResource("ShaderMaterial_rx7pp")
 shape = SubResource("SphereShape3D_8mo5g")
 target_position = Vector3(0, 0, 0)
 script = ExtResource("1_wked4")
+damage = 30
 
 [node name="AttackComponent" type="Node" parent="." unique_id=896308518 node_paths=PackedStringArray("attack_shapecast")]
 script = ExtResource("2_36gpt")

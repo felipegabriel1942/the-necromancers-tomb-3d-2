@@ -55,7 +55,7 @@ data = {
 }
 
 [node name="Player" parent="." unique_id=1502439064 instance=ExtResource("3_nsw7g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2611647, 0.29999995, 8.272126)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2611647, 0.29999995, 5.0313025)
 
 [node name="EnemySpawner" parent="." unique_id=1984983909 instance=ExtResource("4_sjjkl")]
 enemies_scenes = Array[PackedScene]([ExtResource("5_rbi8j"), ExtResource("6_rshia")])

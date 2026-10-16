@@ -17,6 +17,7 @@ script = ExtResource("1_cx3wy")
 
 [node name="KnockbackComponent" type="Node" parent="." unique_id=483534369]
 script = ExtResource("2_dgytl")
+max_knockback = 10.0
 
 [node name="HealthComponent" type="Node" parent="." unique_id=481785490 node_paths=PackedStringArray("hit_audio")]
 script = ExtResource("1_326st")
@@ -53,6 +54,7 @@ wait_time = 0.25
 autostart = true
 
 [connection signal="defeat" from="HealthComponent" to="." method="on_defeat"]
+[connection signal="health_changed" from="HealthComponent" to="." method="_on_health_changed"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
 [connection signal="player_entered" from="ModelRoot/AttackArea" to="." method="_on_attack_area_player_entered"]
 [connection signal="player_exit" from="ModelRoot/AttackArea" to="." method="_on_attack_area_player_exit"]
