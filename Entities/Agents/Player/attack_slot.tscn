@@ -10,5 +10,4 @@ height = 0.5
 script = ExtResource("1_30djm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1272275953]
-visible = false
 mesh = SubResource("SphereMesh_xrivr")

@@ -3,9 +3,7 @@
 [ext_resource type="MeshLibrary" uid="uid://cg6t3a407hnqr" path="res://Levels/Gridmap/floormap.res" id="1_gbce7"]
 [ext_resource type="MeshLibrary" uid="uid://d2ci051leggdh" path="res://Levels/Gridmap/wallmap.res" id="2_s7a6p"]
 [ext_resource type="PackedScene" uid="uid://hpm80wwpunhw" path="res://Entities/Agents/Player/player.tscn" id="3_nsw7g"]
-[ext_resource type="PackedScene" uid="uid://cjfollaaxt2r6" path="res://Levels/enemy_spawner.tscn" id="4_sjjkl"]
 [ext_resource type="PackedScene" uid="uid://bnyk4sieh7bho" path="res://Entities/Agents/Enemies/skeleton_minion.tscn" id="5_rbi8j"]
-[ext_resource type="PackedScene" uid="uid://dj4n7bo2kpqtc" path="res://Entities/Agents/Enemies/minion_archer.tscn" id="6_rshia"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nsw7g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -55,13 +53,7 @@ data = {
 }
 
 [node name="Player" parent="." unique_id=1502439064 instance=ExtResource("3_nsw7g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2611647, 0.29999995, 5.0313025)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.134818, 0.29999995, -1.9526362)
 
-[node name="EnemySpawner" parent="." unique_id=1984983909 instance=ExtResource("4_sjjkl")]
-enemies_scenes = Array[PackedScene]([ExtResource("5_rbi8j"), ExtResource("6_rshia")])
-
-[node name="Marker3D" type="Marker3D" parent="EnemySpawner" unique_id=1342500023]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5195503, 0, -12.700021)
-
-[node name="Marker3D2" type="Marker3D" parent="EnemySpawner" unique_id=118163686]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9964457, 0, -13.793206)
+[node name="SkeletonMinion2" parent="." unique_id=924286236 instance=ExtResource("5_rbi8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1313913, 0, 2.6340423)

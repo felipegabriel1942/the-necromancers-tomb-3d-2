@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cuee6wqu3ygxo"]
+
+[ext_resource type="PackedScene" uid="uid://dd458ol58tux6" path="res://Assets/Models/Characters/Knight/shield_round.gltf" id="1_pl3de"]
+
+[node name="WoodenShield" type="Node3D" unique_id=1212331469]
+
+[node name="shield_round2" parent="." unique_id=552271438 instance=ExtResource("1_pl3de")]

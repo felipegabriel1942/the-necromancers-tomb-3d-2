@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://clgmtjp0g8c0k" path="res://Assets/Models/Weapons/Skeletons/Skeleton_Blade.gltf" id="2_euqha"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wwga5"]
+size = Vector3(1, 2.04, 1)
 
 [node name="SkeletonBlade" unique_id=351045627 instance=ExtResource("1_jky0i")]
 
@@ -12,6 +13,7 @@
 [node name="ShapeCast3D" parent="." index="1" unique_id=336500179]
 shape = SubResource("BoxShape3D_wwga5")
 target_position = Vector3(0, 1, 0)
+collide_with_areas = true
 
 [node name="GPUTrail3D" parent="." index="4" unique_id=884446481]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85216355, 0)

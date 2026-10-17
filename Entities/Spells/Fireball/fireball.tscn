@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cwwyhv265ml65"]
+
+[ext_resource type="Script" uid="uid://dldw5cp071omj" path="res://Components/AttackComponent.gd" id="1_p0yrc"]
+[ext_resource type="Script" uid="uid://bknyvtimo1ghe" path="res://Entities/Spells/Fireball/fireball.gd" id="1_wdu5v"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wwga5"]
+radius = 0.3
+
+[sub_resource type="SphereMesh" id="SphereMesh_xrivr"]
+radius = 0.3
+height = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wwga5"]
+albedo_color = Color(1, 1, 0.29411766, 1)
+emission_enabled = true
+emission = Color(0.92941177, 0.18039216, 0, 1)
+emission_energy_multiplier = 6.18
+
+[node name="Fireball" type="ShapeCast3D" unique_id=881545820]
+shape = SubResource("SphereShape3D_wwga5")
+target_position = Vector3(0, 0, 0)
+script = ExtResource("1_wdu5v")
+speed = 10
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=90309421]
+mesh = SubResource("SphereMesh_xrivr")
+surface_material_override/0 = SubResource("StandardMaterial3D_wwga5")
+
+[node name="AttackComponent" type="Node" parent="." unique_id=1543121724 node_paths=PackedStringArray("attack_shapecast")]
+script = ExtResource("1_p0yrc")
+attack_shapecast = NodePath("..")

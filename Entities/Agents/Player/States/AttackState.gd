@@ -28,6 +28,9 @@ func _update(delta: float) -> void:
 	#agent.move_and_slide()
 	
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("block"):
+		get_root().dispatch(block.name)
+	
 	if event.is_action_pressed("melee_attack"):
 		queued_attack = true
 
@@ -37,3 +40,10 @@ func finish_attack(_animation_name: String) -> void:
 func attempt_queue_attack() -> void:
 	if next_attack and queued_attack:
 		dispatch(next_attack.name)
+		
+func _exit() -> void:
+	agent.weapon_root.set_trail_lenght(0)
+	agent.weapon_root.set_collision(false)
+	
+	if agent.animation_tree.animation_finished.is_connected(finish_attack):
+		agent.animation_tree.animation_finished.disconnect(finish_attack)

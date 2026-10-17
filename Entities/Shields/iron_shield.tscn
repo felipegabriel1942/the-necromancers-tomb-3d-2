@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://djnkme7w7vf01"]
+
+[ext_resource type="Script" uid="uid://cmnh1cer6gxwu" path="res://Entities/Shields/iron_shield.gd" id="1_h7lxj"]
+[ext_resource type="PackedScene" uid="uid://bnp1fwsstq46q" path="res://Assets/Models/Characters/Knight/shield_badge.gltf" id="1_w876s"]
+
+[node name="IronShield" type="Node3D" unique_id=1539794938 groups=["shield"]]
+script = ExtResource("1_h7lxj")
+
+[node name="shield_badge2" parent="." unique_id=1740263262 instance=ExtResource("1_w876s")]
