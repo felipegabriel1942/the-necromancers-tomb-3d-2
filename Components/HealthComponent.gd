@@ -14,8 +14,7 @@ func _ready() -> void:
 	current_health = max_health
 	
 func take_damage(damage_in: float) -> void :
-	print(damage_in)
-	
+		
 	var final_damage := damage_in
 	
 	if is_blocking:
@@ -24,6 +23,10 @@ func take_damage(damage_in: float) -> void :
 	current_health = maxf(current_health - final_damage, 0.0) 
 	
 	health_changed.emit(current_health)
+	
+	print(final_damage)
+	
+	VfxManager.spawn_damage_number(get_parent(), final_damage)
 	
 	if hit_audio: hit_audio.play()
 	

@@ -15,4 +15,11 @@ func set_trail_lenght(value: int) -> void:
 
 func set_collision(value_in: bool) -> void:
 	weapon.collision_enabled = value_in
+
+func load_arrow() -> void:
+	if weapon is Bow:
+		weapon.load_arrow()
 	
+func shoot_arrow() -> void:
+	if weapon is Bow:
+		weapon.shoot_arrow()
