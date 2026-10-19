@@ -3,8 +3,7 @@
 [ext_resource type="MeshLibrary" uid="uid://cg6t3a407hnqr" path="res://Levels/Gridmap/floormap.res" id="1_gbce7"]
 [ext_resource type="MeshLibrary" uid="uid://d2ci051leggdh" path="res://Levels/Gridmap/wallmap.res" id="2_s7a6p"]
 [ext_resource type="PackedScene" uid="uid://hpm80wwpunhw" path="res://Entities/Agents/Player/player.tscn" id="3_nsw7g"]
-[ext_resource type="PackedScene" uid="uid://bnyk4sieh7bho" path="res://Entities/Agents/Enemies/skeleton_minion.tscn" id="5_rbi8j"]
-[ext_resource type="PackedScene" uid="uid://dj4n7bo2kpqtc" path="res://Entities/Agents/Enemies/minion_archer.tscn" id="6_rshia"]
+[ext_resource type="PackedScene" uid="uid://dmmrakbwb8y8j" path="res://VFX/vfx_fire.tscn" id="4_sjjkl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nsw7g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -30,7 +29,9 @@ environment = SubResource("Environment_rbi8j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=571696329]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.4297714, 0.1783287, 0.13365859, 1)
 shadow_enabled = true
+sky_mode = 2
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1816135979]
 navigation_mesh = SubResource("NavigationMesh_xrivr")
@@ -54,10 +55,7 @@ data = {
 }
 
 [node name="Player" parent="." unique_id=1502439064 instance=ExtResource("3_nsw7g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.134818, 0.29999995, -1.9526362)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.134818, 0.29999995, -10.952637)
 
-[node name="SkeletonMinion2" parent="." unique_id=924286236 instance=ExtResource("5_rbi8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1313913, 0, -8.903276)
-
-[node name="MinionArcher" parent="." unique_id=649638333 instance=ExtResource("6_rshia")]
-transform = Transform3D(0.5969826, 0, -0.8022542, 0, 1, 0, 0.8022542, 0, 0.5969826, 2.1139479, 0.29999995, -8.365002)
+[node name="VFX_Fire" parent="." unique_id=4280968 instance=ExtResource("4_sjjkl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4716549, 2.3262239, -3.1594832)

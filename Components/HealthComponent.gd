@@ -26,7 +26,7 @@ func take_damage(damage_in: float) -> void :
 	
 	print(final_damage)
 	
-	VfxManager.spawn_damage_number(get_parent(), final_damage)
+	#VfxManager.spawn_damage_number(get_parent(), final_damage)
 	
 	if hit_audio: hit_audio.play()
 	

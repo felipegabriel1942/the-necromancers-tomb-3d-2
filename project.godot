@@ -24,6 +24,10 @@ VfxManager="*uid://mt0bn82cyxr3"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/User/Desktop/the-necromancers-tomb/creating-enemies.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/GPUTrail-main/plugin.cfg")
@@ -34,7 +38,9 @@ folder_colors={
 "res://Assets/": "red",
 "res://Components/": "purple",
 "res://Entities/": "green",
-"res://Levels/": "orange"
+"res://Levels/": "orange",
+"res://Singletons/": "teal",
+"res://VFX/": "pink"
 }
 
 [global_group]
