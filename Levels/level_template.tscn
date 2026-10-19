@@ -3,7 +3,7 @@
 [ext_resource type="MeshLibrary" uid="uid://cg6t3a407hnqr" path="res://Levels/Gridmap/floormap.res" id="1_gbce7"]
 [ext_resource type="MeshLibrary" uid="uid://d2ci051leggdh" path="res://Levels/Gridmap/wallmap.res" id="2_s7a6p"]
 [ext_resource type="PackedScene" uid="uid://hpm80wwpunhw" path="res://Entities/Agents/Player/player.tscn" id="3_nsw7g"]
-[ext_resource type="PackedScene" uid="uid://dmmrakbwb8y8j" path="res://VFX/vfx_fire.tscn" id="4_sjjkl"]
+[ext_resource type="PackedScene" uid="uid://w1n3bl73vwqd" path="res://Entities/Objects/campfire.tscn" id="5_rbi8j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nsw7g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -57,5 +57,5 @@ data = {
 [node name="Player" parent="." unique_id=1502439064 instance=ExtResource("3_nsw7g")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.134818, 0.29999995, -10.952637)
 
-[node name="VFX_Fire" parent="." unique_id=4280968 instance=ExtResource("4_sjjkl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4716549, 2.3262239, -3.1594832)
+[node name="Campfire" parent="." unique_id=1715716662 instance=ExtResource("5_rbi8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59779525, 0)

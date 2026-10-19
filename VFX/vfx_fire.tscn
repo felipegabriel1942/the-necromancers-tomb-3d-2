@@ -156,7 +156,7 @@ draw_pass_1 = SubResource("QuadMesh_8mo5g")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=524447716]
 light_color = Color(1, 0.5176471, 0.23921569, 1)
-light_energy = 3.0559707
+light_energy = 2.8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1751126200]
 libraries/ = SubResource("AnimationLibrary_rshia")

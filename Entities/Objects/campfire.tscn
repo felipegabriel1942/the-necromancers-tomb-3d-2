@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://w1n3bl73vwqd"]
+
+[ext_resource type="PackedScene" uid="uid://b01o1e2uvxw8k" path="res://Assets/Props/Dungeon/Objects/campfire.glb" id="1_heqnf"]
+[ext_resource type="PackedScene" uid="uid://dmmrakbwb8y8j" path="res://VFX/vfx_fire.tscn" id="2_246cf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
+radius = 1.0
+
+[node name="Campfire" type="StaticBody3D" unique_id=1715716662]
+collision_layer = 4
+collision_mask = 3
+
+[node name="campfire" parent="." unique_id=823256659 instance=ExtResource("1_heqnf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89435804, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=536214957]
+shape = SubResource("SphereShape3D_xrivr")
+
+[node name="VFX_Fire" parent="." unique_id=4280968 instance=ExtResource("2_246cf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59995246, 0)
