@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://n0suu1xbykrg" path="res://Assets/Props/Dungeon/Objects/shelf_small.gltf" id="10_lspjo"]
 [ext_resource type="PackedScene" uid="uid://d1f8gxi2ftrk6" path="res://Assets/Props/Dungeon/Objects/box_small.gltf" id="10_tohvg"]
 [ext_resource type="PackedScene" uid="uid://v517uwlwltv6" path="res://Assets/Props/Dungeon/Objects/bottle_A_green.gltf" id="11_lspjo"]
+[ext_resource type="PackedScene" uid="uid://dj4n7bo2kpqtc" path="res://Entities/Agents/Enemies/minion_archer.tscn" id="11_o7vxk"]
+[ext_resource type="VoxelGIData" uid="uid://c6a1eiysynas6" path="res://Levels/GlobalIluminationData/new_voxel_gi_data.tres" id="13_ocgwq"]
+[ext_resource type="PackedScene" uid="uid://c3ab8rex65pms" path="res://UI/ui.tscn" id="14_oc2yr"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_uabsu"]
 vertices = PackedVector3Array(7.5, 0.65, 8.25, 7.5, 0.9, -0.5, 6.25, 0.65, -0.25, 6.25, 0.9, 8.25, 6, 0.65, 9.5, 6, 0.9, -1.5, -9.5, 0.65, -1.5, -9.5, 0.65, 9.5)
@@ -152,5 +155,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.015504, 2.7086182, 35.111
 [node name="Bed" parent="Decorations/Furniture" parent_id_path=PackedInt32Array(431749057) index="0" unique_id=1466431224 instance=ExtResource("7_emby5")]
 transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, -22.134542, 0.33681488, 38.376953)
 
+[node name="MinionArcher" parent="Entities/Enemies" parent_id_path=PackedInt32Array(988085410) index="0" unique_id=649638333 instance=ExtResource("11_o7vxk")]
+transform = Transform3D(-0.99863434, 0, 0.052244622, 0, 1, 0, -0.052244622, 0, -0.99863434, -3.33313, 0.3393823, 15.082153)
+
 [node name="Chest" parent="Interactables/Chests" parent_id_path=PackedInt32Array(1341103835) index="0" unique_id=1794782066 instance=ExtResource("8_r846i")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -17.6029, 0.33681488, 39.28819)
+
+[node name="VoxelGI" type="VoxelGI" parent="." index="7" unique_id=1797878149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.443146, 0, 25.767456)
+size = Vector3(82.489075, 20, 71.53491)
+data = ExtResource("13_ocgwq")
+
+[node name="UI" parent="." index="8" unique_id=1672704378 instance=ExtResource("14_oc2yr")]

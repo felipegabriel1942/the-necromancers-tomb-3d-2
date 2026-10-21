@@ -14,7 +14,15 @@ sky_material = SubResource("ProceduralSkyMaterial_nsw7g")
 [sub_resource type="Environment" id="Environment_rbi8j"]
 background_mode = 2
 sky = SubResource("Sky_sjjkl")
+ssao_enabled = true
+ssil_enabled = true
 glow_enabled = true
+glow_normalized = true
+glow_strength = 0.7
+glow_bloom = 0.03
+fog_light_color = Color(0.044390544, 0.052667283, 0.065546215, 1)
+fog_density = 0.0025
+volumetric_fog_density = 0.0
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_xrivr"]
 vertices = PackedVector3Array(-10.5, 0.32, -15.5, -10.5, 0.32, 10.5, 7.5, 0.32, 10.5, 7.5, 0.32, -15.5)
