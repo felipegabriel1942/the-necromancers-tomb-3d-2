@@ -3,7 +3,6 @@
 [ext_resource type="MeshLibrary" uid="uid://cg6t3a407hnqr" path="res://Levels/Gridmap/floormap.res" id="1_gbce7"]
 [ext_resource type="MeshLibrary" uid="uid://d2ci051leggdh" path="res://Levels/Gridmap/wallmap.res" id="2_s7a6p"]
 [ext_resource type="PackedScene" uid="uid://hpm80wwpunhw" path="res://Entities/Agents/Player/player.tscn" id="3_nsw7g"]
-[ext_resource type="PackedScene" uid="uid://w1n3bl73vwqd" path="res://Entities/Objects/campfire.tscn" id="5_rbi8j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nsw7g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -57,5 +56,20 @@ data = {
 [node name="Player" parent="." unique_id=1502439064 instance=ExtResource("3_nsw7g")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.134818, 0.29999995, -10.952637)
 
-[node name="Campfire" parent="." unique_id=1715716662 instance=ExtResource("5_rbi8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59779525, 0)
+[node name="Decorations" type="Node3D" parent="." unique_id=1770541352]
+
+[node name="Lighting" type="Node3D" parent="Decorations" unique_id=1527847734]
+
+[node name="Props" type="Node3D" parent="Decorations" unique_id=909350084]
+
+[node name="Furniture" type="Node3D" parent="Decorations" unique_id=431749057]
+
+[node name="Entities" type="Node3D" parent="." unique_id=327028684]
+
+[node name="Enemies" type="Node3D" parent="Entities" unique_id=988085410]
+
+[node name="Interactables" type="Node3D" parent="." unique_id=70042048]
+
+[node name="Chests" type="Node3D" parent="Interactables" unique_id=1341103835]
+
+[node name="Doors" type="Node3D" parent="Interactables" unique_id=933887259]

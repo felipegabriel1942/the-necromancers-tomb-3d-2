@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The Necromancers Tomb 3D"
-run/main_scene="uid://cofnmg0i0fx55"
+run/main_scene="uid://ctp1niwxoovee"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -26,7 +26,7 @@ window/stretch/aspect="expand"
 
 [editor]
 
-movie_writer/movie_file="C:/Users/User/Desktop/the-necromancers-tomb/creating-enemies.avi"
+movie_writer/movie_file="C:/Users/User/Desktop/the-necromancers-tomb/starting-create-demo.avi"
 
 [editor_plugins]
 
