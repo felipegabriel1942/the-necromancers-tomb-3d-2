@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://d1f8gxi2ftrk6" path="res://Assets/Props/Dungeon/Objects/box_small.gltf" id="10_tohvg"]
 [ext_resource type="PackedScene" uid="uid://v517uwlwltv6" path="res://Assets/Props/Dungeon/Objects/bottle_A_green.gltf" id="11_lspjo"]
 [ext_resource type="PackedScene" uid="uid://dj4n7bo2kpqtc" path="res://Entities/Agents/Enemies/minion_archer.tscn" id="11_o7vxk"]
+[ext_resource type="PackedScene" uid="uid://cb0h46fqhff38" path="res://Entities/Objects/door.tscn" id="13_4r2bj"]
 [ext_resource type="VoxelGIData" uid="uid://c6a1eiysynas6" path="res://Levels/GlobalIluminationData/new_voxel_gi_data.tres" id="13_ocgwq"]
 [ext_resource type="PackedScene" uid="uid://c3ab8rex65pms" path="res://UI/ui.tscn" id="14_oc2yr"]
 
@@ -36,7 +37,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 7, 0)
 
 [node name="Player" parent="." index="3" unique_id=1502439064]
-transform = Transform3D(-0.99999946, 0, 0.0010616779, 0, 1, 0, -0.0010616779, 0, -0.99999946, -3.4546835, 0.29999995, 2.8319683)
+transform = Transform3D(-0.99999946, 0, 0.0010616779, 0, 1, 0, -0.0010616779, 0, -0.99999946, -16.63022, 0.29999995, 28.025877)
 
 [node name="TorchWall" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="0" unique_id=1641980459 instance=ExtResource("2_2eg01")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.259197, 2.0654297, 2.1538162)
@@ -74,28 +75,34 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -21.
 [node name="TorchWall16" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="11" unique_id=1793495053 instance=ExtResource("2_2eg01")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.7395525, 2.0654297, 32.27461)
 
-[node name="TorchWall10" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="12" unique_id=1478511968 instance=ExtResource("2_2eg01")]
+[node name="TorchWall21" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="12" unique_id=873829268 instance=ExtResource("2_2eg01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7395525, 2.0654297, 26.736156)
+
+[node name="TorchWall22" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="13" unique_id=1500651989 instance=ExtResource("2_2eg01")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.7395525, 2.0654297, 32.27461)
+
+[node name="TorchWall10" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="14" unique_id=1478511968 instance=ExtResource("2_2eg01")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.2604475, 2.0654297, 36.437626)
 
-[node name="TorchWall12" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="13" unique_id=1568251812 instance=ExtResource("2_2eg01")]
+[node name="TorchWall12" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="15" unique_id=1568251812 instance=ExtResource("2_2eg01")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5.8048105, 2.0654297, 40.257694)
 
-[node name="TorchWall13" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="14" unique_id=1374563799 instance=ExtResource("2_2eg01")]
+[node name="TorchWall13" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="16" unique_id=1374563799 instance=ExtResource("2_2eg01")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.9792738, 2.0654297, 40.257694)
 
-[node name="TorchWall4" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="15" unique_id=453554589 instance=ExtResource("2_2eg01")]
+[node name="TorchWall4" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="17" unique_id=453554589 instance=ExtResource("2_2eg01")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.112943, 2.0654297, 2.155086)
 
-[node name="TorchWall5" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="16" unique_id=1876085938 instance=ExtResource("2_2eg01")]
+[node name="TorchWall5" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="18" unique_id=1876085938 instance=ExtResource("2_2eg01")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.2742586, 2.0654297, 14.360653)
 
-[node name="TorchWall6" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="17" unique_id=347132873 instance=ExtResource("2_2eg01")]
+[node name="TorchWall6" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="19" unique_id=347132873 instance=ExtResource("2_2eg01")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.74475765, 2.0654297, 14.360653)
 
-[node name="TorchWall8" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="18" unique_id=1450635354 instance=ExtResource("2_2eg01")]
+[node name="TorchWall8" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="20" unique_id=1450635354 instance=ExtResource("2_2eg01")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.2552423, 2.0654297, 22.360653)
 
-[node name="TorchWall9" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="19" unique_id=628908425 instance=ExtResource("2_2eg01")]
+[node name="TorchWall9" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="21" unique_id=628908425 instance=ExtResource("2_2eg01")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.2552423, 2.0654297, 36.360653)
 
 [node name="box_small2" parent="Decorations/Props" parent_id_path=PackedInt32Array(909350084) index="0" unique_id=13240777 instance=ExtResource("10_tohvg")]
@@ -160,6 +167,12 @@ transform = Transform3D(-0.99863434, 0, 0.052244622, 0, 1, 0, -0.052244622, 0, -
 
 [node name="Chest" parent="Interactables/Chests" parent_id_path=PackedInt32Array(1341103835) index="0" unique_id=1794782066 instance=ExtResource("8_r846i")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -17.6029, 0.33681488, 39.28819)
+
+[node name="Door" parent="Interactables/Doors" parent_id_path=PackedInt32Array(933887259) index="0" unique_id=59520135 instance=ExtResource("13_4r2bj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.498407, 0.33681488, 32.468536)
+
+[node name="Door2" parent="Interactables/Doors" parent_id_path=PackedInt32Array(933887259) index="1" unique_id=534551277 instance=ExtResource("13_4r2bj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.346548, 0.33681488, 29.520502)
 
 [node name="VoxelGI" type="VoxelGI" parent="." index="7" unique_id=1797878149]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.443146, 0, 25.767456)

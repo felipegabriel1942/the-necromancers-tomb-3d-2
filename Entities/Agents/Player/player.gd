@@ -17,6 +17,7 @@ signal moved()
 @onready var animation_tree: AnimationTree = $PlayerRoot/AnimationTree
 @onready var camera_3d: Camera3D = $CameraRoot/Camera3D
 @onready var health_component: HealthComponent = $HealthComponent
+@onready var ray_cast_3d: RayCast3D = $PlayerRoot/RayCast3D
 
 @onready var state_machine: LimboHSM = $StateMachine
 @onready var idle: PlayerState = $StateMachine/Idle
@@ -73,3 +74,10 @@ func look_toward_direction(direction: Vector3, delta: float) -> void:
 
 func _on_health_changed(value: Variant) -> void:
 	get_viewport().get_camera_3d().quick_shake(0.75)
+
+func _physics_process(delta: float) -> void:
+	var collider = ray_cast_3d.get_collider()
+	
+	if Input.is_action_just_pressed("interact"):
+		if collider != null and collider is Interactable:
+			collider.interact()
