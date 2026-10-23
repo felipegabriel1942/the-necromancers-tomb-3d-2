@@ -37,7 +37,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 7, 0)
 
 [node name="Player" parent="." index="3" unique_id=1502439064]
-transform = Transform3D(-0.99999946, 0, 0.0010616779, 0, 1, 0, -0.0010616779, 0, -0.99999946, -16.63022, 0.29999995, 28.025877)
+transform = Transform3D(-0.99999946, 0, 0.0010616779, 0, 1, 0, -0.0010616779, 0, -0.99999946, -3.67737, 0.29999995, 4.2087383)
 
 [node name="TorchWall" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="0" unique_id=1641980459 instance=ExtResource("2_2eg01")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.259197, 2.0654297, 2.1538162)
@@ -172,7 +172,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -17.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.498407, 0.33681488, 32.468536)
 
 [node name="Door2" parent="Interactables/Doors" parent_id_path=PackedInt32Array(933887259) index="1" unique_id=534551277 instance=ExtResource("13_4r2bj")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.346548, 0.33681488, 29.520502)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.440237, 0.33681488, 29.520502)
 locked = true
 
 [node name="VoxelGI" type="VoxelGI" parent="." index="7" unique_id=1797878149]

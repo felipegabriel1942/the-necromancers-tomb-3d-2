@@ -20,12 +20,10 @@ func interact() -> void:
 	
 	if closed:
 		animation_player.play("Open")
-		opening_sound.play()
 		closed = false
 	else:
 		animation_player.play("Close")
 		closed = true
-		closing_sound.play()
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	can_interact = true

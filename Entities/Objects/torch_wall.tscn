@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bw6rl6llk3mxp" path="res://Assets/Props/Dungeon/Objects/dungeon_texture.png" id="1_ctf7v"]
 [ext_resource type="Texture2D" uid="uid://cdsw40xv4qka0" path="res://Assets/VFX/fire_texture_01.png" id="2_ctf7v"]
 [ext_resource type="Texture2D" uid="uid://d2ta6h8t80asm" path="res://Assets/VFX/2d_lights_and_shadows_neutral_point_light (1).png" id="3_du83w"]
+[ext_resource type="AudioStream" uid="uid://ba2gik65q0xdl" path="res://Assets/Audio/fire_02.mp3" id="4_du83w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7s4tc"]
 resource_name = "texture"
@@ -212,3 +213,10 @@ shadow_enabled = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VFX_Fire" unique_id=1751126200]
 libraries/ = SubResource("AnimationLibrary_rshia")
 autoplay = &"Init"
+
+[node name="FireSound" type="AudioStreamPlayer3D" parent="." unique_id=1928346317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1342876, 0.5835751, 0)
+stream = ExtResource("4_du83w")
+volume_db = -20.0
+autoplay = true
+bus = &"SFX"

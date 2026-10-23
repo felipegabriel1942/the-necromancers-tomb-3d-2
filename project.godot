@@ -28,7 +28,8 @@ window/stretch/aspect="expand"
 
 [editor]
 
-movie_writer/movie_file="C:/Users/User/Desktop/the-necromancers-tomb/improving-graphics.avi"
+movie_writer/movie_file="C:/Users/User/Desktop/the-necromancers-tomb/creating-pause-menu.avi"
+movie_writer/disable_vsync=true
 
 [editor_plugins]
 

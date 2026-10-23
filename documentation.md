@@ -105,3 +105,5 @@ Implementar um ciclo jogável de exploração e combate que permita ao jogador:
 6. Enfrentar um chefe final.
 
 Os valores numéricos deste documento são uma base inicial de implementação e poderão ser ajustados conforme os testes de jogabilidade, sem ampliar o escopo dos sistemas.
+
+https://pixabay.com/music/search/dark%20fantasy/
