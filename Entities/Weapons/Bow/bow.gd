@@ -1,4 +1,4 @@
-extends Node3D
+extends Weapon
 class_name Bow
 
 @onready var arrow_origin: Marker3D = $ArrowOrigin
@@ -10,6 +10,7 @@ var loaded_arrow
 func load_arrow() -> void:
 	loaded_arrow = ARROW.instantiate()
 	add_child(loaded_arrow)
+	loaded_arrow.character_stats = parent_stats
 	loaded_arrow.global_position = arrow_origin.global_position
 
 func shoot_arrow() -> void:

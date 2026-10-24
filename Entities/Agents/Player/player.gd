@@ -13,6 +13,11 @@ signal moved()
 	"4": null
 }
 
+@export_category("RPG Stats")
+@export var stats: CharacterStats
+
+@onready var stats_component: StatsComponent = $StatsComponent
+
 @onready var player_root: Node3D = $PlayerRoot
 @onready var animation_tree: AnimationTree = $PlayerRoot/AnimationTree
 @onready var camera_3d: Camera3D = $CameraRoot/Camera3D

@@ -1,4 +1,4 @@
-extends Node3D
+extends Weapon
 class_name MeleeWeapon
 
 @export var knockback := 5.0

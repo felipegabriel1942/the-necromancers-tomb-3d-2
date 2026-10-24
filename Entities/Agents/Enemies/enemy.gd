@@ -4,6 +4,7 @@ class_name Enemy
 @export var speed: float  = 3.0
 @export var attack_range: float = 2.0
 
+@onready var stats_component: StatsComponent = $StatsComponent
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var model_root: Node3D = $ModelRoot
 @onready var player: Player = get_tree().get_first_node_in_group("player")

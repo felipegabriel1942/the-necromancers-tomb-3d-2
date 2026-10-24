@@ -22,7 +22,7 @@ func _update(delta: float) -> void:
 		agent.velocity = agent.impulse_component.magnitude
 		
 	agent.weapon.attack_component.deal_damage(
-		agent.attack, 
+		agent.stats_component, 
 		agent.player_root.global_basis.z * agent.weapon.knockback)
 	
 	#agent.move_and_slide()

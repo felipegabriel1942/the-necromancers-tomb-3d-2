@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 		global_position += direction * speed * delta
 
 func _physics_process(delta: float) -> void:
-	attack_component.deal_damage(damage, Vector3.FORWARD)
+	#attack_component.deal_damage(damage, Vector3.FORWARD)
 	
 	if is_colliding():
 		queue_free()

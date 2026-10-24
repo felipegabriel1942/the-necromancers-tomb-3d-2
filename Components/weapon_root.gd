@@ -3,12 +3,14 @@ extends Node3D
 class_name WeaponRoot
 
 @export var weapon_scene: PackedScene
+@export var parent_stats: StatsComponent
 
-var weapon
+var weapon: Weapon
 
 func _ready() -> void:
 	weapon = weapon_scene.instantiate()
 	add_child(weapon)
+	weapon.parent_stats = parent_stats
 
 func set_trail_lenght(value: int) -> void:
 	weapon.set_trail_lenght(value)

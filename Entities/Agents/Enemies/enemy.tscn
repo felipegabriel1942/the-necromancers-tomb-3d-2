@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://dfsgqj5687246" path="res://Assets/Audio/hit.ogg" id="2_cx3wy"]
 [ext_resource type="Script" uid="uid://dw8mmtmnp362q" path="res://Components/KnockbackComponent.gd" id="2_dgytl"]
 [ext_resource type="PackedScene" uid="uid://cvqtlx7uffhfb" path="res://Components/health_bar.tscn" id="3_lq547"]
+[ext_resource type="Script" uid="uid://dl27m8nssyy7d" path="res://Components/StatsComponent.gd" id="4_gvjfj"]
 [ext_resource type="Script" uid="uid://b4y1qaeru3oqu" path="res://Entities/Agents/Enemies/attack_area.gd" id="5_lq547"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
@@ -19,9 +20,13 @@ script = ExtResource("1_cx3wy")
 script = ExtResource("2_dgytl")
 max_knockback = 10.0
 
-[node name="HealthComponent" type="Node" parent="." unique_id=481785490 node_paths=PackedStringArray("hit_audio")]
+[node name="HealthComponent" type="Node" parent="." unique_id=481785490 node_paths=PackedStringArray("hit_audio", "stats_component")]
 script = ExtResource("1_326st")
 hit_audio = NodePath("../HitAudio")
+stats_component = NodePath("../StatsComponent")
+
+[node name="StatsComponent" type="Node" parent="." unique_id=2082786423]
+script = ExtResource("4_gvjfj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1127346035]
 shape = SubResource("CapsuleShape3D_xrivr")

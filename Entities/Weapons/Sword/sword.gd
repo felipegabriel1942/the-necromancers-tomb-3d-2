@@ -10,6 +10,7 @@ class_name Sword
 
 @export var collision_enabled: bool = false:
 	set(value):
+		print("ola")
 		if value and not attack_audio.playing:
 			attack_audio.play()
 			

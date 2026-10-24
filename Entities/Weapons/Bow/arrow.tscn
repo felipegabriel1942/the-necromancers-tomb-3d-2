@@ -43,8 +43,9 @@ material = SubResource("ShaderMaterial_rx7pp")
 [node name="Arrow" type="ShapeCast3D" unique_id=624124856]
 shape = SubResource("SphereShape3D_8mo5g")
 target_position = Vector3(0, 0, 0)
+collision_mask = 13
 script = ExtResource("1_wked4")
-damage = 30
+damage = 3
 
 [node name="AttackComponent" type="Node" parent="." unique_id=896308518 node_paths=PackedStringArray("attack_shapecast")]
 script = ExtResource("2_36gpt")

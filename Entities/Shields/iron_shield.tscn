@@ -5,5 +5,6 @@
 
 [node name="IronShield" type="Node3D" unique_id=1539794938 groups=["shield"]]
 script = ExtResource("1_h7lxj")
+block_damage_redution = 0.5
 
 [node name="shield_badge2" parent="." unique_id=1740263262 instance=ExtResource("1_w876s")]
