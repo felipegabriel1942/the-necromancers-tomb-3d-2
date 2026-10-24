@@ -6,6 +6,7 @@ signal defeat()
 
 @export var hit_audio: AudioStreamPlayer3D
 @export var stats_component: StatsComponent
+@export var damage_number_color: Color = Color.WHITE
 
 var current_health: float
 var is_blocking: bool = false
@@ -27,7 +28,8 @@ func take_damage(damage_in: float) -> void :
 	current_health = maxf(current_health - final_damage, 0.0) 
 	
 	health_changed.emit(current_health)
-	VfxManager.spawn_damage_number(get_parent(), final_damage)
+		
+	VfxManager.spawn_damage_number(get_parent(), final_damage, damage_number_color)
 	
 	if hit_audio: hit_audio.play()
 	

@@ -300,6 +300,7 @@ stats = ExtResource("3_dpky0")
 script = ExtResource("22_h8p51")
 hit_audio = NodePath("../Hit")
 stats_component = NodePath("../StatsComponent")
+damage_number_color = Color(1, 0.5259075, 0.46041763, 1)
 
 [node name="KnockbackComponent" type="Node" parent="." unique_id=313422789]
 script = ExtResource("3_38q8j")
