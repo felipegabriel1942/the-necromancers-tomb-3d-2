@@ -15,6 +15,7 @@ class_name StatsComponent
 
 @export_group("Equipment")
 @export var shield: Shield
+@export var weapon: Weapon
 
 var max_health: int:
 	get:
@@ -22,7 +23,12 @@ var max_health: int:
 
 var attack: int:
 	get:
-		return base_attack + (level - 1) * attack_per_level
+		var bonus_attack = 0
+		
+		if weapon:
+			bonus_attack = weapon.damage
+		
+		return base_attack + (level - 1) * attack_per_level + bonus_attack
 
 var defense: int:
 	get:

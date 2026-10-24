@@ -10,6 +10,7 @@ var weapon: Weapon
 func _ready() -> void:
 	weapon = weapon_scene.instantiate()
 	add_child(weapon)
+	parent_stats.weapon = weapon
 	weapon.parent_stats = parent_stats
 
 func set_trail_lenght(value: int) -> void:

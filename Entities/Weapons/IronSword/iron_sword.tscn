@@ -15,6 +15,7 @@ curve = SubResource("Curve_8mo5g")
 
 [node name="IronSword" unique_id=351045627 instance=ExtResource("1_1jqgq")]
 knockback = 20.0
+damage = 5
 
 [node name="sword_1handed2" parent="." index="0" unique_id=1467857250 instance=ExtResource("2_2clmn")]
 
