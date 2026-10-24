@@ -4,6 +4,7 @@ class_name WeaponRoot
 
 @export var weapon_scene: PackedScene
 @export var parent_stats: StatsComponent
+@export var weapon_swing: AudioStreamPlayer3D
 
 var weapon: Weapon
 

@@ -19,7 +19,7 @@ func _enter() -> void:
 
 func _tick(delta: float) -> Status:
 	if agent.weapon.has_node("AttackComponent"):
-		agent.weapon.attack_component.deal_damage(agent.stats_component.attack, Vector3.FORWARD)
+		agent.weapon.attack_component.deal_damage(agent.stats_component, Vector3.FORWARD)
 	
 	if not agent.player_in_attack_range and not attacking:
 		return FAILURE

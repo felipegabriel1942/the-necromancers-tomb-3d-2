@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ut0a6mmsi6xl" path="res://Entities/Weapons/melee_weapon.tscn" id="1_jky0i"]
 [ext_resource type="PackedScene" uid="uid://clgmtjp0g8c0k" path="res://Assets/Models/Weapons/Skeletons/Skeleton_Blade.gltf" id="2_euqha"]
+[ext_resource type="AudioStream" uid="uid://cw2ltq62s1v1w" path="res://Assets/Audio/weapon-swing.ogg" id="3_velj1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wwga5"]
 size = Vector3(1, 2.04, 1)
@@ -14,6 +15,9 @@ size = Vector3(1, 2.04, 1)
 shape = SubResource("BoxShape3D_wwga5")
 target_position = Vector3(0, 1, 0)
 collide_with_areas = true
+
+[node name="AttackAudio" parent="." index="3" unique_id=1075063868]
+stream = ExtResource("3_velj1")
 
 [node name="GPUTrail3D" parent="." index="4" unique_id=884446481]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85216355, 0)
