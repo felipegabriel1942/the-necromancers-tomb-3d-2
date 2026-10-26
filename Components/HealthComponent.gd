@@ -20,7 +20,7 @@ func setup() -> void:
 func take_damage(damage_in: float) -> void :
 		
 	var final_damage := damage_in
-	
+		
 	if is_blocking and stats_component.shield:
 		var reduction: float = stats_component.shield.block_damage_redution
 		final_damage *= 1.0 - clampf(reduction, 0.0, 1.0)
@@ -29,7 +29,12 @@ func take_damage(damage_in: float) -> void :
 	
 	health_changed.emit(current_health)
 		
-	VfxManager.spawn_damage_number(get_parent(), final_damage, damage_number_color)
+	VfxManager.spawn_damage_number(
+		get_parent(), 
+		final_damage, 
+		damage_number_color,
+		"Blocked" if is_blocking else ""
+	)
 	
 	if hit_audio: hit_audio.play()
 	

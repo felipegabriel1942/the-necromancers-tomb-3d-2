@@ -1,13 +1,15 @@
 extends Node3D
 
-@onready var label: Label3D = $Label3D
+@onready var number_label: Label3D = $NumberLabel
+@onready var text_label: Label3D = $TextLabel
 
 var target_position := Vector3.ZERO
 
-func set_damage_text(amount: float, position_in: Vector3, color: Color) -> void:
+func set_damage_text(amount: float, position_in: Vector3, color: Color, text: String = "") -> void:
 	if not is_inside_tree():
 		await ready
 	
-	label.text = "%.0f" % amount
+	number_label.text = "%.0f" % amount
 	global_position = position_in
-	label.modulate = color
+	text_label.text = text
+	number_label.modulate = color

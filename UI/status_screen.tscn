@@ -1,0 +1,521 @@
+[gd_scene format=3 uid="uid://dy3torrr830de"]
+
+[ext_resource type="Texture2D" uid="uid://bqbsf60pa7ge1" path="res://Assets/UI/Icons/heart-icon(2).png" id="1_2gtku"]
+[ext_resource type="Script" uid="uid://cos2gthcqlaw4" path="res://UI/status_screen.gd" id="1_jl6y1"]
+[ext_resource type="Texture2D" uid="uid://dmed1it1yu00c" path="res://Assets/UI/Icons/flame-icon(1).png" id="2_jl6y1"]
+[ext_resource type="Texture2D" uid="uid://b1obgmt7v54to" path="res://Assets/UI/Icons/level-icon(1).png" id="2_rxla2"]
+[ext_resource type="Texture2D" uid="uid://bc8e4av2urdr5" path="res://Assets/UI/Icons/sword-icon(3).png" id="3_rxla2"]
+[ext_resource type="Texture2D" uid="uid://cx0jc6roastl" path="res://Assets/UI/Icons/shield-icon(3).png" id="4_bjlcp"]
+[ext_resource type="Texture2D" uid="uid://cck454qp4kx30" path="res://Assets/UI/Icons/exp-icon(1).png" id="5_n3oqw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dajm1"]
+bg_color = Color(0.078431375, 0.105882354, 0.14509805, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.72156864, 0.5882353, 0.3137255, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xrivr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6gg6"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 4
+border_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wwga5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1lj4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwga5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 3
+border_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7tqi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.37036443, 0.37036452, 0.37036428, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbfhl"]
+bg_color = Color(0.9098039, 0.14117648, 0.18431373, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fiuh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.37036443, 0.37036452, 0.37036428, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h81ot"]
+bg_color = Color(0.08005083, 0.4740494, 0.9810712, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sikbv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 3
+border_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrivr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 2
+border_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mo5g"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 4
+border_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njqwk"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.37036443, 0.37036452, 0.37036428, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13qdw"]
+bg_color = Color(0.5937838, 3.3547134e-05, 0.462251, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="StatusScreen" type="Control" unique_id=95809513]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jl6y1")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1751547052]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6392157)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1416427606]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1692499051]
+custom_minimum_size = Vector2(1200, 700)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dajm1")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=1362063576]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=987175444]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1537032767]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xrivr")
+
+[node name="StatsContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1223945660]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_e6gg6")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer" unique_id=1041703991]
+layout_mode = 2
+theme_override_constants/margin_left = 36
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer" unique_id=1886114509]
+layout_mode = 2
+
+[node name="LevelContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer" unique_id=512551403]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wwga5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/LevelContainer" unique_id=1500423825]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/LevelContainer/HBoxContainer" unique_id=1610373342]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_rxla2")
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/LevelContainer/HBoxContainer" unique_id=591221576]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1lj4")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/LevelContainer/HBoxContainer/PanelContainer" unique_id=1117156101]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/LevelContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=311925936]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/LevelContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=875816862]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Level"
+
+[node name="LevelLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/LevelContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=350275838]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12"
+
+[node name="VitalsContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer" unique_id=601277631]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wwga5")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer" unique_id=2136043115]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 18
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer" unique_id=1605622890]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer" unique_id=195566621]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=469043908]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_2gtku")
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=376903115]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1lj4")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer" unique_id=1035977809]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=1663853151]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Pontos de Vida (PV)"
+
+[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=120171528]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1959068771]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1036241757]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1lj4")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer" unique_id=1199938136]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=1796794671]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Pontos de Vida (PV)"
+
+[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=571294552]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=170214566]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_c7tqi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cbfhl")
+value = 50.0
+show_percentage = false
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer" unique_id=1985297464]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1784901442]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_jl6y1")
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=170844861]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1lj4")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer" unique_id=546465105]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer" unique_id=1349735777]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Pontos de Magia (PM)"
+
+[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer" unique_id=1912240251]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1939488012]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1447471569]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1lj4")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/PanelContainer" unique_id=224004613]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/PanelContainer/MarginContainer" unique_id=506418301]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Pontos de Magia (PM)"
+
+[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/PanelContainer/MarginContainer" unique_id=565016585]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/VitalsContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1153705596]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_4fiuh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_h81ot")
+value = 100.0
+show_percentage = false
+
+[node name="CombatAttributesContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer" unique_id=1863699995]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sikbv")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/CombatAttributesContainer" unique_id=745678956]
+layout_mode = 2
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/CombatAttributesContainer/MarginContainer" unique_id=1290319391]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/CombatAttributesContainer/MarginContainer/VBoxContainer" unique_id=565748403]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/CombatAttributesContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1861824708]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("3_rxla2")
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/CombatAttributesContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1122238806]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1lj4")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/CombatAttributesContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer" unique_id=543391470]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/CombatAttributesContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=443980562]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Ataque"
+
+[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/CombatAttributesContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=1121176573]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "12"
+horizontal_alignment = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/CombatAttributesContainer/MarginContainer/VBoxContainer" unique_id=1621173196]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/CombatAttributesContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=183723340]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_bjlcp")
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/CombatAttributesContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1074678033]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_xrivr")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/CombatAttributesContainer/MarginContainer/VBoxContainer/HBoxContainer3/PanelContainer" unique_id=279175625]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/CombatAttributesContainer/MarginContainer/VBoxContainer/HBoxContainer3/PanelContainer/MarginContainer" unique_id=1075932157]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Defesa"
+
+[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/CombatAttributesContainer/MarginContainer/VBoxContainer/HBoxContainer3/PanelContainer/MarginContainer" unique_id=309580534]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "8"
+horizontal_alignment = 2
+
+[node name="ExperienceContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer" unique_id=822676165]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8mo5g")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/ExperienceContainer" unique_id=1650810832]
+layout_mode = 2
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/ExperienceContainer/MarginContainer" unique_id=1572780997]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/ExperienceContainer/MarginContainer/VBoxContainer" unique_id=2101525737]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/ExperienceContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1458475842]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_n3oqw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/ExperienceContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1719430916]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 11
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/ExperienceContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=866668353]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1lj4")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/ExperienceContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer" unique_id=1519213718]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/ExperienceContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=1667165614]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Experiência"
+
+[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/ExperienceContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=716349373]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "320 / 600"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/ExperienceContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=4942731]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_njqwk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_13qdw")
+value = 50.0
+show_percentage = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/ExperienceContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1108407985]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/ExperienceContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1259137383]
+layout_mode = 2
+text = "Falta para o próximo level:"
+
+[node name="NextLevelExpLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/StatsContainer/MarginContainer/VBoxContainer/ExperienceContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=14303024]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "280"
+horizontal_alignment = 2
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=952094445]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+current_tab = 0
+
+[node name="TabBar" type="TabBar" parent="TabContainer" unique_id=1667142866]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="TabBar2" type="TabBar" parent="TabContainer" unique_id=1026838956]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1

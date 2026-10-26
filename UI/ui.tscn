@@ -2,8 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://dy1oui1aya4f6" path="res://UI/pause_menu.tscn" id="1_2fwl4"]
 [ext_resource type="Script" uid="uid://brp501atjwhb4" path="res://UI/ui.gd" id="1_dajm1"]
+[ext_resource type="PackedScene" uid="uid://dy3torrr830de" path="res://UI/status_screen.tscn" id="3_hat8c"]
 
 [node name="UI" type="CanvasLayer" unique_id=1672704378]
 script = ExtResource("1_dajm1")
 
 [node name="PauseMenu" parent="." unique_id=1276717090 instance=ExtResource("1_2fwl4")]
+visible = false
+
+[node name="StatusScreen" parent="." unique_id=95809513 instance=ExtResource("3_hat8c")]
+visible = false
+
+[editable path="PauseMenu"]
