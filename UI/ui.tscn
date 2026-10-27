@@ -11,6 +11,5 @@ script = ExtResource("1_dajm1")
 visible = false
 
 [node name="StatusScreen" parent="." unique_id=95809513 instance=ExtResource("3_hat8c")]
-visible = false
 
 [editable path="PauseMenu"]

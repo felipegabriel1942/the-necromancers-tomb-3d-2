@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bqbsf60pa7ge1" path="res://Assets/UI/Icons/heart-icon(2).png" id="1_2gtku"]
 [ext_resource type="Script" uid="uid://cos2gthcqlaw4" path="res://UI/status_screen.gd" id="1_jl6y1"]
+[ext_resource type="PackedScene" uid="uid://cn77027h0avy" path="res://Entities/Agents/Player/player_rig.tscn" id="2_bjlcp"]
 [ext_resource type="Texture2D" uid="uid://dmed1it1yu00c" path="res://Assets/UI/Icons/flame-icon(1).png" id="2_jl6y1"]
 [ext_resource type="Texture2D" uid="uid://b1obgmt7v54to" path="res://Assets/UI/Icons/level-icon(1).png" id="2_rxla2"]
 [ext_resource type="Texture2D" uid="uid://bc8e4av2urdr5" path="res://Assets/UI/Icons/sword-icon(3).png" id="3_rxla2"]
@@ -21,6 +22,29 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xrivr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bjlcp"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_n3oqw"]
+sky_material = SubResource("ProceduralSkyMaterial_bjlcp")
+
+[sub_resource type="Environment" id="Environment_s446q"]
+background_mode = 2
+sky = SubResource("Sky_n3oqw")
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+glow_normalized = true
+glow_strength = 0.7
+glow_bloom = 0.03
+fog_light_color = Color(0.044390544, 0.052667283, 0.065546215, 1)
+fog_density = 0.0025
+volumetric_fog_density = 0.0
+
+[sub_resource type="World3D" id="World3D_wwga5"]
+environment = SubResource("Environment_s446q")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6gg6"]
 content_margin_left = 0.0
@@ -168,10 +192,31 @@ theme_override_constants/margin_bottom = 30
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1537032767]
+[node name="PlayerPreview" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1537032767]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_xrivr")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/PlayerPreview" unique_id=1569614555]
+layout_mode = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/PlayerPreview/SubViewportContainer" unique_id=727142220]
+world_3d = SubResource("World3D_wwga5")
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(558, 632)
+render_target_update_mode = 4
+
+[node name="PlayerRig" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/PlayerPreview/SubViewportContainer/SubViewport" unique_id=177507663 instance=ExtResource("2_bjlcp")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/PlayerPreview/SubViewportContainer/SubViewport" unique_id=1320848834]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25000003, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 2.4359741, 4.270813, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/PlayerPreview/SubViewportContainer/SubViewport" unique_id=486427950]
+transform = Transform3D(1, 0, 0, 0, 0.97648656, 0.21557835, 0, -0.21557835, 0.97648656, 0, 1.793335, 2.7612305)
+fov = 68.0
 
 [node name="StatsContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1223945660]
 layout_mode = 2
