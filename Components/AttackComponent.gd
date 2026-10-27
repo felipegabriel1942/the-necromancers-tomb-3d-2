@@ -1,6 +1,8 @@
 extends Node
 class_name AttackComponent
 
+signal collider_hit(collider)
+
 @export var attack_shapecast: ShapeCast3D
 
 var temporary_exceptions := []
@@ -19,6 +21,7 @@ func deal_damage(attacker_stats: StatsComponent, knockback: Vector3) -> void:
 				health_component.take_damage(attacker_stats.calculate_damage_against(collider.get_node("StatsComponent")))
 				attack_shapecast.add_exception(collider)
 				temporary_exceptions.append(collider)
+				collider_hit.emit(collider)
 			
 			if collider.has_node("KnockbackComponent"):
 				var knockback_component = collider.get_node("KnockbackComponent") as KnockbackComponent
