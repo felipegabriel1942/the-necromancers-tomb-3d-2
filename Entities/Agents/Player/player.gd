@@ -53,6 +53,8 @@ func _ready() -> void:
 	state_machine.add_transition(block, idle, idle.name)
 	state_machine.add_transition(run, block, block.name)
 	state_machine.add_transition(attack_01, block, block.name)
+	state_machine.add_transition(attack_02, block, block.name)
+	state_machine.add_transition(attack_03, block, block.name)
 	
 	state_machine.initial_state = idle
 	state_machine.initialize(self)

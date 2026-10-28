@@ -13,6 +13,7 @@ func _generate_name() -> String:
 	
 func _enter() -> void:
 	target = blackboard.get_var(target_var)
+	cooldown_timer = 0.5
 	
 	if not agent.animation_tree.animation_finished.is_connected(end_attack):
 		agent.animation_tree.animation_finished.connect(end_attack)
@@ -38,6 +39,7 @@ func _tick(delta: float) -> Status:
 	return SUCCESS
 
 func attack() -> void:
+	print("ola")
 	attacking = true
 	agent.look_at_target(target.global_position)
 	agent.animation_tree.change_immediate("Attack")

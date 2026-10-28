@@ -18,6 +18,7 @@ ssao_enabled = true
 ssil_enabled = true
 glow_enabled = true
 glow_normalized = true
+glow_intensity = 1.0
 glow_strength = 0.7
 glow_bloom = 0.03
 fog_light_color = Color(0.044390544, 0.052667283, 0.065546215, 1)

@@ -3,6 +3,7 @@ class_name Enemy
 
 @export var speed: float  = 3.0
 @export var attack_range: float = 2.0
+@export var hit_stop_time: float = 0.15
 
 @onready var stats_component: StatsComponent = $StatsComponent
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
@@ -72,7 +73,6 @@ func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
 func update_path() -> void:
 	acquire_attack_slot()
 	navigation_agent_3d.set_target_position(attack_slot.global_position)
-
 
 func _on_health_changed(value: Variant) -> void:
 	get_viewport().get_camera_3d().quick_shake(0.2)

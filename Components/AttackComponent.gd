@@ -4,6 +4,7 @@ class_name AttackComponent
 signal collider_hit(collider)
 
 @export var attack_shapecast: ShapeCast3D
+@export var vfx_impact: PackedScene
 
 var temporary_exceptions := []
 
@@ -14,6 +15,8 @@ func deal_damage(attacker_stats: StatsComponent, knockback: Vector3) -> void:
 		attack_shapecast.force_shapecast_update()
 		
 		for index in attack_shapecast.get_collision_count():
+			var collision_point = attack_shapecast.get_collision_point(index)
+			var collision_normal = attack_shapecast.get_collision_normal(index)
 			var collider = attack_shapecast.get_collider(index)
 
 			if collider.has_node("HealthComponent"):
@@ -21,6 +24,7 @@ func deal_damage(attacker_stats: StatsComponent, knockback: Vector3) -> void:
 				health_component.take_damage(attacker_stats.calculate_damage_against(collider.get_node("StatsComponent")))
 				attack_shapecast.add_exception(collider)
 				temporary_exceptions.append(collider)
+				instantiate_vfx_impact(collision_point, collision_normal)
 				collider_hit.emit(collider)
 			
 			if collider.has_node("KnockbackComponent"):
@@ -32,3 +36,14 @@ func reset_exceptions() -> void:
 		attack_shapecast.remove_exception(exception)
 	
 	temporary_exceptions = []
+
+func instantiate_vfx_impact(collision_point, collision_normal) -> void:
+	if vfx_impact == null:
+		return
+	
+	var camera_position = get_viewport().get_camera_3d().global_position
+	var direction_to_camera = (camera_position - collision_point).normalized()
+	var vfx_impact_instance = vfx_impact.instantiate()
+	get_tree().current_scene.add_child(vfx_impact_instance)
+	vfx_impact_instance.global_position = collision_point + direction_to_camera * .3
+	vfx_impact_instance.look_at(collision_point + collision_normal, Vector3.UP)

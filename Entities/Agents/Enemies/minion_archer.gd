@@ -17,3 +17,14 @@ func on_defeat() -> void:
 	var tween := create_tween()
 	tween.tween_interval(2.0)
 	tween.tween_callback(queue_free)
+
+func _on_health_changed(value: Variant) -> void:
+	get_viewport().get_camera_3d().quick_shake(0.2)
+	hit_stop(hit_stop_time)
+	animation_tree.change_immediate("Hit")
+	bt_player.active = false
+
+func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
+	if anim_name.begins_with("Hit"):
+		bt_player.restart()
+		bt_player.active = true

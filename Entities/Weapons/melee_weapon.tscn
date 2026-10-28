@@ -5,18 +5,20 @@
 [ext_resource type="Shader" uid="uid://dupwdqi3xwqkq" path="res://addons/GPUTrail-main/shaders/trail.gdshader" id="3_bl0o7"]
 [ext_resource type="Shader" uid="uid://chw2sb0lglfib" path="res://addons/GPUTrail-main/shaders/trail_draw_pass.gdshader" id="4_yrwg0"]
 [ext_resource type="Script" uid="uid://x23yk72mqxiw" path="res://addons/GPUTrail-main/GPUTrail3D.gd" id="5_p1mnx"]
+[ext_resource type="Texture2D" uid="uid://6m8bp5w0jyyk" path="res://Assets/VFX/T_VFX_Trail223.png" id="6_pj3bf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pj3bf"]
 shader = ExtResource("3_bl0o7")
 
-[sub_resource type="Gradient" id="Gradient_dad2a"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+[sub_resource type="Gradient" id="Gradient_p1mnx"]
+colors = PackedColorArray(1, 1, 1, 0.41568628, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_jo85s"]
-gradient = SubResource("Gradient_dad2a")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wwga5"]
+gradient = SubResource("Gradient_p1mnx")
+use_hdr = true
 
 [sub_resource type="Curve" id="Curve_8mo5g"]
-_data = [Vector2(0, 0.8076923), 0.0, 0.0, 0, 0, Vector2(0.9670659, 0.015384555), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.0051679574, 0.98701286), 0.0, 0.0, 0, 0, Vector2(0.99999994, 0.006493449), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_wwga5"]
@@ -26,12 +28,13 @@ curve = SubResource("Curve_8mo5g")
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("4_yrwg0")
+shader_parameter/tex = ExtResource("6_pj3bf")
 shader_parameter/mask_strength = 1.0
 shader_parameter/uv_offset = Vector2(0, 0)
-shader_parameter/color_ramp = SubResource("GradientTexture1D_jo85s")
+shader_parameter/color_ramp = SubResource("GradientTexture1D_wwga5")
 shader_parameter/curve = SubResource("CurveTexture_wwga5")
 shader_parameter/emmission_transform = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
-shader_parameter/flags = 40
+shader_parameter/flags = 42
 
 [sub_resource type="QuadMesh" id="QuadMesh_lulcg"]
 material = SubResource("ShaderMaterial_r52b6")
@@ -58,7 +61,9 @@ draw_pass_1 = SubResource("QuadMesh_lulcg")
 script = ExtResource("5_p1mnx")
 length = 1
 length_seconds = 0.01694915254237288
-color_ramp = SubResource("GradientTexture1D_jo85s")
+texture = ExtResource("6_pj3bf")
+color_ramp = SubResource("GradientTexture1D_wwga5")
 curve = SubResource("CurveTexture_wwga5")
+use_red_as_alpha = true
 _defaults_have_been_set = true
 metadata/_custom_type_script = "uid://x23yk72mqxiw"
