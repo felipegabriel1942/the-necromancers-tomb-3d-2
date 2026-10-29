@@ -1,7 +1,13 @@
 extends Node
 class_name StatsComponent
 
-@export var level: int =1
+signal stats_changed()
+
+const BASE_LEVEL_XP: float = 100.0
+
+var experience: int = 0
+var level: int = 1
+var experience_to_next_lvl: int = BASE_LEVEL_XP
 
 @export_group("Base Attributes")
 @export var base_max_health: int = 10
@@ -46,3 +52,29 @@ func calculate_damage_against(target: StatsComponent) -> int:
 	var damage := int(floor(base_damage * variation))
 	
 	return maxi(1, damage)
+
+func add_experience(new_experience) -> void:
+	experience += new_experience
+	
+	if experience >= experience_to_next_lvl:
+		level += 1
+		experience = 0
+		experience_to_next_lvl = BASE_LEVEL_XP * level
+		recalculate_stats()
+		
+		print("Level: {level} | HP: {max_health} | Attack: {attack} | Defense: {defense}".format({
+			"level": level,
+			"max_health": max_health,
+			"attack": attack,
+			"defense": defense
+		}))
+		
+		VfxManager.spawn_level_up(get_parent(), level)
+		
+		
+	stats_changed.emit()
+
+func recalculate_stats() -> void:
+	base_attack += attack_per_level
+	base_defense += defense_per_level
+	base_max_health += health_per_level

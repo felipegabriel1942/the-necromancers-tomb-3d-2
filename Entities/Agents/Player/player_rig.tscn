@@ -1,7 +1,11 @@
 [gd_scene format=4 uid="uid://cn77027h0avy"]
 
 [ext_resource type="Texture2D" uid="uid://d28m4asba55w6" path="res://Assets/Models/Characters/Knight/Knight_knight_texture.png" id="1_5wtdi"]
+[ext_resource type="PackedScene" uid="uid://du42raxn8a7tp" path="res://Entities/Weapons/IronSword/iron_sword.tscn" id="2_30ey1"]
 [ext_resource type="Animation" uid="uid://csfguptv60xk" path="res://Assets/Models/Animations/Idle_A.res" id="2_haqit"]
+[ext_resource type="Animation" uid="uid://dla21hj3gyvvc" path="res://Assets/Models/Animations/T-Pose.res" id="3_ktnl7"]
+[ext_resource type="PackedScene" uid="uid://djnkme7w7vf01" path="res://Entities/Shields/iron_shield.tscn" id="3_sl1qa"]
+[ext_resource type="PackedScene" uid="uid://c6wspvoo64c1l" path="res://Assets/Props/Dungeon/Floor/floor_tile_large.gltf" id="3_tyg5i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jycd3"]
 resource_name = "knight"
@@ -265,7 +269,8 @@ blend_shape_mode = 0
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tyg5i"]
 _data = {
-&"Idle_A": ExtResource("2_haqit")
+&"Idle_A": ExtResource("2_haqit"),
+&"T-Pose": ExtResource("3_ktnl7")
 }
 
 [node name="PlayerRig" type="Node3D" unique_id=177507663]
@@ -491,6 +496,34 @@ mesh = SubResource("ArrayMesh_tylln")
 skin = SubResource("Skin_oxry8")
 skeleton = NodePath("..")
 
+[node name="WeaponAtt" type="BoneAttachment3D" parent="Knight/Rig_Medium/Skeleton3D" unique_id=1630158827]
+transform = Transform3D(0.26286313, 9.23872e-07, -0.96483314, 0, -0.9999986, 2.9802322e-07, -0.96483237, -5.662441e-07, -0.2628631, -0.47960967, 0.6317219, 0.06649494)
+bone_name = "hand.r"
+bone_idx = 12
+
+[node name="IronSword" parent="Knight/Rig_Medium/Skeleton3D/WeaponAtt" unique_id=351045627 instance=ExtResource("2_30ey1")]
+transform = Transform3D(-4.371136e-08, -0.9999996, 2.842171e-14, 0.9999996, -4.3711353e-08, 1.3502086e-14, -7.7046117e-16, 4.2632564e-14, 1, -0.014831534, 0.10096747, 0)
+
+[node name="ShieldAtt" type="BoneAttachment3D" parent="Knight/Rig_Medium/Skeleton3D" unique_id=2017728278]
+transform = Transform3D(0.26286316, -2.9802322e-07, 0.9648331, -2.0861626e-07, -0.99999905, 5.066395e-07, 0.9648325, -7.1525574e-07, -0.26286328, 0.48096094, 0.6344771, 0.07156995)
+bone_name = "hand.l"
+bone_idx = 7
+
+[node name="IronShield" parent="Knight/Rig_Medium/Skeleton3D/ShieldAtt" unique_id=1539794938 instance=ExtResource("3_sl1qa")]
+transform = Transform3D(1, 2.842171e-13, 1.4901161e-07, 1.4210855e-13, 1, 2.7000624e-13, 0, 7.1054274e-14, 1, -0.016272485, 0.08593726, 0.03670776)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Knight" unique_id=1851775054]
 libraries/ = SubResource("AnimationLibrary_tyg5i")
 autoplay = &"Idle_A"
+
+[node name="floor_tile_large2" parent="." unique_id=577371282 instance=ExtResource("3_tyg5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013080597, -0.13800049, 0.35925293)
+visible = false
+
+[node name="floor_tile_large3" parent="." unique_id=1551471992 instance=ExtResource("3_tyg5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0130806, -0.13800049, 0.35925293)
+visible = false
+
+[node name="floor_tile_large4" parent="." unique_id=175350142 instance=ExtResource("3_tyg5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.013081, -0.13800049, 0.35925293)
+visible = false

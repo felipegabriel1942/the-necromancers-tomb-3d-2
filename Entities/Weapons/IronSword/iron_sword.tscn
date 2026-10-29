@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c3t722fmj0u5p" path="res://VFX/vfx_slash_1.tscn" id="3_quvmr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wwga5"]
-size = Vector3(0.5, 1.5, 0.5)
+size = Vector3(0.5, 2, 0.5)
 
 [node name="IronSword" unique_id=351045627 instance=ExtResource("1_1jqgq")]
 knockback = 20.0

@@ -3,7 +3,8 @@ class_name Enemy
 
 @export var speed: float  = 3.0
 @export var attack_range: float = 2.0
-@export var hit_stop_time: float = 0.15
+@export var hit_stop_time: float = 0.05
+@export var experience_given: int = 50
 
 @onready var stats_component: StatsComponent = $StatsComponent
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
@@ -11,6 +12,7 @@ class_name Enemy
 @onready var player: Player = get_tree().get_first_node_in_group("player")
 @onready var path_timer: Timer = $PathTimer
 @onready var knockback_component: KnockbackComponent = $KnockbackComponent
+@onready var health_component: HealthComponent = $HealthComponent
 
 var player_in_attack_range: bool = false
 var attack_slot
@@ -18,6 +20,7 @@ var weapon
 
 func _ready() -> void:
 	path_timer.timeout.connect(update_path)
+	health_component.defeat.connect(give_player_experience)
 
 func on_defeat() -> void:
 	pass # Replace with function body.
@@ -87,3 +90,6 @@ func hit_stop(duration: float) -> void:
 		true
 	).timeout
 	Engine.time_scale = 1.0
+
+func give_player_experience() -> void:
+	player.stats_component.add_experience(experience_given)

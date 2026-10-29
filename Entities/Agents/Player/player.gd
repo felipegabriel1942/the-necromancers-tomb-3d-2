@@ -80,7 +80,7 @@ func look_toward_direction(direction: Vector3, delta: float) -> void:
 	)
 
 func _on_health_changed(value: Variant) -> void:
-	get_viewport().get_camera_3d().quick_shake(0.75)
+	get_viewport().get_camera_3d().quick_shake(0.2)
 
 func _physics_process(delta: float) -> void:
 	var collider = ray_cast_3d.get_collider()

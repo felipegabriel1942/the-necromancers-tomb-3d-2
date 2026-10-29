@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bx87uw5y7code"]
+
+[ext_resource type="Script" uid="uid://ckfns82jj58hq" path="res://Singletons/VFX/level_up.gd" id="1_si45i"]
+
+[sub_resource type="Animation" id="Animation_yc6gf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label3D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_si45i"]
+resource_name = "default"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.5, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.39999998, 4.5333333, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yc6gf"]
+_data = {
+&"RESET": SubResource("Animation_yc6gf"),
+&"default": SubResource("Animation_si45i")
+}
+
+[node name="LevelUp" type="Node3D" unique_id=260069934]
+script = ExtResource("1_si45i")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=320225097]
+billboard = 1
+modulate = Color(0.89411765, 0.8862745, 0.69803923, 1)
+outline_modulate = Color(0.70206624, 0.5968361, 0, 1)
+text = "Novo level"
+font_size = 48
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=226443312]
+libraries/ = SubResource("AnimationLibrary_yc6gf")
+autoplay = &"default"

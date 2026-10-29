@@ -13,7 +13,7 @@ func _ready() -> void:
 	super._ready()
 
 func _on_health_changed(value: Variant) -> void:
-	get_viewport().get_camera_3d().quick_shake(0.2)
+	get_viewport().get_camera_3d().quick_shake(0.1)
 	hit_stop(hit_stop_time)
 	weapon_root.set_collision(false)
 	weapon_root.set_trail_lenght(0)

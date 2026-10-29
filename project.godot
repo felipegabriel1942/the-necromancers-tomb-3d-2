@@ -23,12 +23,10 @@ VfxManager="*uid://mt0bn82cyxr3"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [editor]
 
-movie_writer/movie_file="C:/Users/User/Desktop/the-necromancers-tomb/creating-hit-impact-vfx.avi"
+movie_writer/movie_file="C:/Users/User/Desktop/the-necromancers-tomb/creating-player-status-screen.avi"
 movie_writer/fps=30
 
 [editor_plugins]

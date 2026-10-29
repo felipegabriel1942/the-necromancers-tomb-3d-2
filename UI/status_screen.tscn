@@ -209,14 +209,15 @@ size = Vector2i(558, 632)
 render_target_update_mode = 4
 
 [node name="PlayerRig" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/PlayerPreview/SubViewportContainer/SubViewport" unique_id=177507663 instance=ExtResource("2_bjlcp")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/PlayerPreview/SubViewportContainer/SubViewport" unique_id=1320848834]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25000003, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 2.4359741, 4.270813, 0)
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/PlayerPreview/SubViewportContainer/SubViewport" unique_id=486427950]
-transform = Transform3D(1, 0, 0, 0, 0.97648656, 0.21557835, 0, -0.21557835, 0.97648656, 0, 1.793335, 2.7612305)
-fov = 68.0
+transform = Transform3D(-0.9937521, -0.02406066, 0.108985476, 0, 0.97648656, 0.21557838, -0.1116098, 0.21423146, -0.9703856, 0.33483887, 1.7223022, -2.7046509)
+fov = 65.0
 
 [node name="StatsContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1223945660]
 layout_mode = 2
