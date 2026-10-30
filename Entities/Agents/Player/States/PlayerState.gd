@@ -19,5 +19,5 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("melee_attack"):
 		dispatch(attack.name)
 		
-	#if event.is_action_pressed("cast_fireball"):
-		#print(agent.action_slots["1"])
+	if event.is_action_pressed("cast_heal"):
+		dispatch("Cast")

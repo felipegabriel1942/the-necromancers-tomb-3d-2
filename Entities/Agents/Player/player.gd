@@ -31,6 +31,7 @@ signal moved()
 @onready var attack_02: PlayerState = $StateMachine/Attack_02
 @onready var attack_03: PlayerState = $StateMachine/Attack_03
 @onready var block: PlayerState = $StateMachine/Block
+@onready var cast: PlayerState = $StateMachine/Cast
 
 @onready var weapon_root: WeaponRoot = $PlayerRoot/Rig_Medium/Skeleton3D/WeaponSlot/WeaponRoot
 @onready var attack_slots: Node3D = $PlayerRoot/AttackSlots
@@ -55,6 +56,7 @@ func _ready() -> void:
 	state_machine.add_transition(attack_01, block, block.name)
 	state_machine.add_transition(attack_02, block, block.name)
 	state_machine.add_transition(attack_03, block, block.name)
+	state_machine.add_transition(idle, cast, cast.name)
 	
 	state_machine.initial_state = idle
 	state_machine.initialize(self)

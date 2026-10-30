@@ -26,6 +26,8 @@ func _update(delta: float) -> void:
 		agent.stats_component, 
 		agent.player_root.global_basis.z * agent.weapon.knockback)
 	
+	#agent.move_and_slide()
+	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("block"):
 		get_root().dispatch(block.name)

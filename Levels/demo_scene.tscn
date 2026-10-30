@@ -38,7 +38,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 7, 0)
 
 [node name="Player" parent="." index="3" unique_id=1502439064]
-transform = Transform3D(-0.99999946, 0, 0.0010616779, 0, 1, 0, -0.0010616779, 0, -0.99999946, 3.0849133, 0.29999995, 4.2087383)
+transform = Transform3D(-0.99999946, 0, 0.0010616779, 0, 1, 0, -0.0010616779, 0, -0.99999946, -3.1608448, 0.29999995, 4.2087383)
 
 [node name="TorchWall" parent="Decorations/Lighting" parent_id_path=PackedInt32Array(1527847734) index="0" unique_id=1641980459 instance=ExtResource("2_2eg01")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.259197, 2.0654297, 2.1538162)
