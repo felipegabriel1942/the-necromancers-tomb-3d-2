@@ -14,6 +14,9 @@ func _enter() -> void:
 func _tick(delta: float) -> Status:
 	if not is_instance_valid(target):
 		return FAILURE
+		
+	if not agent.player_detected:
+		return FAILURE
 
 	var direction = target.global_position - agent.global_position
 	direction.y = 0

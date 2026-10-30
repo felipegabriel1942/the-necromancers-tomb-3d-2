@@ -13,14 +13,45 @@ class_name Enemy
 @onready var path_timer: Timer = $PathTimer
 @onready var knockback_component: KnockbackComponent = $KnockbackComponent
 @onready var health_component: HealthComponent = $HealthComponent
+@onready var vision_ray: RayCast3D = $RayCast3D
+@onready var screen_notifier: VisibleOnScreenNotifier3D = $VisibleOnScreenNotifier3D
 
 var player_in_attack_range: bool = false
 var attack_slot
 var weapon
+var can_see_player := false
+var player_detected := false
+var on_screen := false
 
 func _ready() -> void:
+	screen_notifier.screen_entered.connect(func(): on_screen = true)
 	path_timer.timeout.connect(update_path)
 	health_component.defeat.connect(give_player_experience)
+
+func _physics_process(delta: float) -> void:
+	if not is_instance_valid(player):
+		return
+		
+	check_player_visibility()
+	
+func check_player_visibility() -> void:
+	if not on_screen:
+		return
+	
+	if player_detected:
+		return
+	
+	var target_position = player.global_position
+	target_position.y += 1.0
+	
+	vision_ray.target_position = vision_ray.to_local(target_position)
+	vision_ray.force_raycast_update()
+	
+	if vision_ray.is_colliding():
+		var collider = vision_ray.get_collider()
+				
+		if collider.is_in_group("player"):
+			player_detected = true
 
 func on_defeat() -> void:
 	pass # Replace with function body.

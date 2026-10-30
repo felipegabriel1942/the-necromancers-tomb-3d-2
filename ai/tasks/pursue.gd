@@ -18,6 +18,9 @@ func _tick(delta: float) -> Status:
 	
 	if agent.attack_slot == null:
 		return FAILURE
+		
+	if not agent.player_detected:
+		return FAILURE
 	
 	if agent.navigation_agent_3d.is_navigation_finished() or agent.player_in_attack_range:
 		agent.animation_tree.blend_target = -1.0
